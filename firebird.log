@@ -1,0 +1,40 @@
+
+SUPORTE3 (Client)	Thu Feb 15 16:46:50 2024
+	INET/INET_connect: gethostbyname (SYSDBA) failed, error code = 11001
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:46:54 2024
+	INET/INET_connect: gethostbyname (SYSDBA) failed, error code = 11001
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:47:02 2024
+	INET/INET_connect: gethostbyname (SYSDBA) failed, error code = 11001
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:47:06 2024
+	INET/INET_connect: gethostbyname (SYSDBA) failed, error code = 11001
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:48:20 2024
+	INET/inet_error: connect errno = 10061
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:48:24 2024
+	INET/inet_error: connect errno = 10061
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:48:48 2024
+	INET/inet_error: connect errno = 10061
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:48:52 2024
+	INET/inet_error: connect errno = 10061
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:54:29 2024
+	INET/inet_error: connect errno = 10061
+
+
+SUPORTE3 (Client)	Thu Feb 15 16:54:33 2024
+	INET/inet_error: connect errno = 10061
+
