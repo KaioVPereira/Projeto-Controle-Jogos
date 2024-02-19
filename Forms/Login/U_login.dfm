@@ -3,8 +3,8 @@ object Frm_login: TFrm_login
   Top = 0
   BorderStyle = bsNone
   Caption = 'Login'
-  ClientHeight = 213
-  ClientWidth = 333
+  ClientHeight = 307
+  ClientWidth = 471
   Color = clBtnHighlight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,21 +17,21 @@ object Frm_login: TFrm_login
   PixelsPerInch = 96
   TextHeight = 13
   object LB_senha: TLabel
-    Left = 137
-    Top = 109
+    Left = 214
+    Top = 100
     Width = 37
     Height = 13
     Caption = 'SENHA:'
   end
   object LB_nome: TLabel
-    Left = 137
-    Top = 48
+    Left = 216
+    Top = 39
     Width = 35
     Height = 13
     Caption = 'LOGIN:'
   end
   object SpeedButton1: TSpeedButton
-    Left = 264
+    Left = 408
     Top = 84
     Width = 33
     Height = 29
@@ -113,36 +113,55 @@ object Frm_login: TFrm_login
       FFFF}
     OnClick = SpeedButton1Click
   end
-  object txt_login: TEdit
+  object LB_CriarConta: TLabel
     Left = 96
-    Top = 59
-    Width = 121
+    Top = 224
+    Width = 287
+    Height = 13
+    Cursor = crHandPoint
+    Caption = 'N'#227'o tem uma conta? Cliquei aqui para criar uma conta nova '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    OnMouseEnter = LB_CriarContaMouseEnter
+    OnMouseLeave = LB_CriarContaMouseLeave
+  end
+  object txt_login: TEdit
+    Left = 112
+    Top = 57
+    Width = 249
     Height = 21
+    Alignment = taCenter
     CharCase = ecUpperCase
     TabOrder = 0
   end
   object txt_senha: TEdit
-    Left = 96
-    Top = 120
-    Width = 121
+    Left = 112
+    Top = 119
+    Width = 249
     Height = 21
     PasswordChar = '*'
     TabOrder = 1
   end
   object btn_logar: TButton
-    Left = 63
+    Left = 167
     Top = 165
     Width = 75
     Height = 25
+    Cursor = crHandPoint
     Caption = 'LOGAR'
     TabOrder = 2
     OnClick = btn_logarClick
   end
   object btn_cancelar: TButton
-    Left = 176
+    Left = 248
     Top = 165
     Width = 75
     Height = 25
+    Cursor = crHandPoint
     Caption = 'CANCELAR'
     TabOrder = 3
     OnClick = btn_cancelarClick
@@ -150,7 +169,7 @@ object Frm_login: TFrm_login
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 333
+    Width = 471
     Height = 33
     Align = alTop
     Caption = 'TELA DE LOGIN'
@@ -165,8 +184,8 @@ object Frm_login: TFrm_login
       '       SENHA '
       'FROM USUARIO'
       'WHERE LOGIN = :LOGIN')
-    Left = 264
-    Top = 144
+    Left = 416
+    Top = 256
     ParamData = <
       item
         Name = 'LOGIN'

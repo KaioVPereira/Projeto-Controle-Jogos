@@ -21,12 +21,15 @@ type
     btn_cancelar: TButton;
     Panel1: TPanel;
     SpeedButton1: TSpeedButton;
+    LB_CriarConta: TLabel;
     procedure btn_cancelarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure btn_logarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure LB_CriarContaMouseEnter(Sender: TObject);
+    procedure LB_CriarContaMouseLeave(Sender: TObject);
   private
 
     function Login (pLogin, pSenha: string):Boolean;
@@ -82,6 +85,18 @@ end;
 procedure TFrm_login.FormShow(Sender: TObject);
 begin
   GravaUsuario := '';
+end;
+
+procedure TFrm_login.LB_CriarContaMouseEnter(Sender: TObject);
+begin
+  LB_CriarConta.Font.Color := clHighlight;
+  LB_CriarConta.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TFrm_login.LB_CriarContaMouseLeave(Sender: TObject);
+begin
+  LB_CriarConta.Font.Color := clWindowText;
+  LB_CriarConta.Font.Style := [fsItalic];
 end;
 
 function TFrm_login.Login (pLogin, pSenha: string):boolean;
