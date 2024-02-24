@@ -8,20 +8,20 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ExtCtrls, U_Biblioteca,
-  Vcl.Buttons, U_ConfigIni, U_constantes ;
+  Vcl.Buttons, U_ConfigIni, U_constantes, Vcl.Imaging.jpeg ;
 
 type
   TFrm_login = class(TForm)
     txt_login: TEdit;
     txt_senha: TEdit;
-    LB_senha: TLabel;
-    LB_nome: TLabel;
-    fd_QueryLogin: TFDQuery;
     btn_logar: TButton;
     btn_cancelar: TButton;
     Panel1: TPanel;
     SpeedButton1: TSpeedButton;
+    IMG_Fundo: TImage;
     LB_CriarConta: TLabel;
+    LB_Usuario: TLabel;
+    LB_Senha: TLabel;
     procedure btn_cancelarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -45,7 +45,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_Dados, uCrpt;
+uses U_Dados, uCrpt, DM_Login;
 
 procedure TFrm_login.btn_cancelarClick(Sender: TObject);
 begin
@@ -74,47 +74,50 @@ begin
   begin
     Application.Terminate;
   end;
+  FreeAndNil(DMB_Login);
 end;
 
 procedure TFrm_login.FormCreate(Sender: TObject);
 begin
-  Frm_login := TFrm_login.Create(nil);
-  Frm_login.Show;
+  if not Assigned(DMB_Login) then
+    DMB_Login := TDMB_Login.Create(nil);
 end;
 
 procedure TFrm_login.FormShow(Sender: TObject);
 begin
   GravaUsuario := '';
+  LB_CriarConta.BringToFront;
 end;
+
 
 procedure TFrm_login.LB_CriarContaMouseEnter(Sender: TObject);
 begin
-  LB_CriarConta.Font.Color := clHighlight;
+   LB_CriarConta.Font.Color := clHighlight;
   LB_CriarConta.Font.Style := [fsUnderline,fsItalic];
 end;
 
 procedure TFrm_login.LB_CriarContaMouseLeave(Sender: TObject);
 begin
-  LB_CriarConta.Font.Color := clWindowText;
+   LB_CriarConta.Font.Color := clHighlightText;
   LB_CriarConta.Font.Style := [fsItalic];
 end;
 
 function TFrm_login.Login (pLogin, pSenha: string):boolean;
 begin
   Result := False;
-  fd_QueryLogin.Close;
-  fd_QueryLogin.ParamByName('LOGIN').AsString := pLogin;
-  fd_QueryLogin.Open();
+  DMB_Login.fd_QueryLogin.Close;
+  DMB_Login.fd_QueryLogin.ParamByName('LOGIN').AsString := pLogin;
+  DMB_Login.fd_QueryLogin.Open();
 
-  fd_QueryLogin.First;
-  while not fd_QueryLogin.Eof do
+  DMB_Login.fd_QueryLogin.First;
+  while not DMB_Login.fd_QueryLogin.Eof do
   begin
-    if pSenha = Criptografa('D', fd_QueryLogin.FieldByName('SENHA').AsAnsiString) then
+    if pSenha = Criptografa('D', DMB_Login.fd_QueryLogin.FieldByName('SENHA').AsAnsiString) then
     begin
       Result := True;
       break;
     end;
-      fd_QueryLogin.Next;
+      DMB_Login.fd_QueryLogin.Next;
   end;
 
 end;

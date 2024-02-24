@@ -10,7 +10,8 @@ uses
   U_constantes in 'Classes\U_constantes.pas',
   uCrpt in 'Classes\uCrpt.pas',
   U_ConfigIni in 'Forms\ConfigIni\U_ConfigIni.pas' {frm_ConfigIni},
-  U_Dados in 'Forms\Dados\U_Dados.pas' {dm_Dados: TDataModule};
+  U_Dados in 'Forms\Dados\U_Dados.pas' {dm_Dados: TDataModule},
+  DM_Login in 'Forms\Login\DM_Login.pas' {DMB_Login: TDataModule};
 
 {$R *.res}
 
