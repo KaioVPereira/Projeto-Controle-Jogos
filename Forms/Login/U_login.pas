@@ -30,6 +30,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure LB_CriarContaMouseEnter(Sender: TObject);
     procedure LB_CriarContaMouseLeave(Sender: TObject);
+    procedure LB_CriarContaClick(Sender: TObject);
   private
 
     function Login (pLogin, pSenha: string):Boolean;
@@ -45,7 +46,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_Dados, uCrpt, DM_Login;
+uses U_Dados, uCrpt, DM_Login, U_CadUsuario;
 
 procedure TFrm_login.btn_cancelarClick(Sender: TObject);
 begin
@@ -89,6 +90,11 @@ begin
   LB_CriarConta.BringToFront;
 end;
 
+
+procedure TFrm_login.LB_CriarContaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadUsuario, Frm_CadUsuario);
+end;
 
 procedure TFrm_login.LB_CriarContaMouseEnter(Sender: TObject);
 begin

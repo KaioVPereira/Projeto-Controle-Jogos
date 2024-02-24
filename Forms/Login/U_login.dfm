@@ -2390,6 +2390,7 @@ object Frm_login: TFrm_login
     Font.Name = 'Tahoma'
     Font.Style = [fsItalic]
     ParentFont = False
+    OnClick = LB_CriarContaClick
     OnMouseEnter = LB_CriarContaMouseEnter
     OnMouseLeave = LB_CriarContaMouseLeave
   end
@@ -2434,8 +2435,14 @@ object Frm_login: TFrm_login
     Left = 128
     Top = 191
     Width = 249
-    Height = 21
+    Height = 27
     Alignment = taCenter
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     PasswordChar = '*'
     TabOrder = 1
   end
