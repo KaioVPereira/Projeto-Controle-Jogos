@@ -2,7 +2,7 @@ unit U_Biblioteca;
 
 interface
   uses IniFiles, System.SysUtils, Vcl.Forms, FireDAC.Comp.Client,
-  System.Classes, Winapi.Windows, Data.DB, Vcl.ExtCtrls, Vcl.Imaging.jpeg; //frxClass;
+  System.Classes, Winapi.Windows, Data.DB, Vcl.ExtCtrls, Vcl.Imaging.jpeg,RegularExpressions; //frxClass;
 
   const OffsetMemoryStream : Int64 = 0;
 
@@ -18,6 +18,8 @@ interface
   procedure MsgErro           (pMsg: String);
   procedure EnableEdit        (Form : TForm ; Valor : Boolean);
   Function  ValidaCPF         (CPF : String): Boolean;
+  Function  VerificaCaracteresEspeciais(Texto : String): Boolean;
+  function  ValidaEmail        (const email: string): Boolean;
   Var GravaUsuario : String;
 
   var MemoryStream : TMemoryStream;
@@ -217,4 +219,20 @@ begin
   Result := (CleanCPF[10] = Char(48 + Digs[0])) and (CleanCPF[11] = Char(48 + Digs[1]));
 end;
 
+
+Function VerificaCaracteresEspeciais(Texto : String): Boolean;
+var regex: TRegEx;
+begin
+  regex := TRegEx.Create('[^a-zA-Z0-9]');
+
+  Result := regex.IsMatch(texto);
+end;
+
+function ValidaEmail(const email: string): Boolean;
+var
+regex: TRegEx;
+begin
+  regex := TRegEx.Create('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+  Result := regex.IsMatch(email);
+end;
 end.

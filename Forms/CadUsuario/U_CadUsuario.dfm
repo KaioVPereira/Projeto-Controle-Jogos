@@ -5,7 +5,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
   BorderStyle = bsSingle
   Caption = 'CADASTRO DE USU'#193'RIO'
   ClientHeight = 713
-  ClientWidth = 639
+  ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 639
+    Width = 650
     Height = 713
     Align = alClient
     Picture.Data = {
@@ -1849,6 +1849,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
       F4B18EA7518ED9DB8EF8FFD9}
     Stretch = True
     ExplicitTop = -8
+    ExplicitWidth = 639
   end
   object Label1: TLabel
     Left = 297
@@ -1867,7 +1868,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
   object Label2: TLabel
     Left = 297
     Top = 165
-    Width = 65
+    Width = 58
     Height = 21
     Alignment = taCenter
     Caption = 'E-MAIL:'
@@ -1919,7 +1920,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 248
+    Left = 236
     Top = 429
     Width = 159
     Height = 21
@@ -1935,30 +1936,85 @@ object Frm_CadUsuario: TFrm_CadUsuario
   object SpeedButton1: TSpeedButton
     Left = 504
     Top = 376
-    Width = 23
+    Width = 33
     Height = 22
+    Hint = ' Mostrar Senha'
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = SpeedButton1Click
   end
   object SpeedButton2: TSpeedButton
     Left = 504
     Top = 456
-    Width = 23
+    Width = 33
     Height = 22
+    Hint = 'Mostar Senha'
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = SpeedButton2Click
   end
-  object Edit1: TEdit
+  object lb_ValidaSenha: TLabel
+    Left = 139
+    Top = 483
+    Width = 359
+    Height = 17
+    Alignment = taCenter
+    Caption = 'As senhas n'#227'o est'#227'o iguais, coloque as senhas novamente'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object Lb_ValidaUserExistente: TLabel
+    Left = 192
+    Top = 142
+    Width = 261
+    Height = 17
+    Alignment = taCenter
+    Caption = 'addsadsadsadsadsadasdsadsadadsadsadsadsadasds'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object lb_ValidaEmail: TLabel
+    Left = 264
+    Top = 219
+    Width = 110
+    Height = 17
+    Alignment = taCenter
+    Caption = 'E-MAIL INV'#193'LIDO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object TXT_Usuario: TEdit
     Left = 168
     Top = 112
     Width = 321
     Height = 21
     Alignment = taCenter
+    CharCase = ecUpperCase
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
+    OnChange = TXT_UsuarioChange
   end
-  object Edit2: TEdit
+  object TXT_Email: TEdit
     Left = 168
     Top = 192
     Width = 321
@@ -1968,11 +2024,12 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
+    OnChange = TXT_EmailChange
   end
-  object Edit3: TEdit
+  object txt_Numero: TEdit
     Left = 264
     Top = 288
     Width = 225
@@ -1981,11 +2038,12 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
+    NumbersOnly = True
     ParentFont = False
     TabOrder = 3
   end
-  object Edit4: TEdit
+  object txt_ddd: TEdit
     Left = 168
     Top = 288
     Width = 73
@@ -1994,11 +2052,12 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
+    NumbersOnly = True
     ParentFont = False
     TabOrder = 2
   end
-  object Edit5: TEdit
+  object txt_Senha: TEdit
     Left = 168
     Top = 376
     Width = 321
@@ -2008,12 +2067,13 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     PasswordChar = '*'
     TabOrder = 4
+    OnChange = txt_SenhaChange
   end
-  object Edit6: TEdit
+  object txt_ConfirmaSenha: TEdit
     Left = 168
     Top = 456
     Width = 321
@@ -2023,10 +2083,11 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     PasswordChar = '*'
     TabOrder = 5
+    OnChange = txt_ConfirmaSenhaChange
   end
   object Button1: TButton
     Left = 176

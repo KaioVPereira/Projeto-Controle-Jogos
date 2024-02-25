@@ -133,6 +133,11 @@
             <Form>Frm_CadUsuario</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Forms\CadUsuario\DM_CadUsuario.pas">
+            <Form>DMB_CadUsuario</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

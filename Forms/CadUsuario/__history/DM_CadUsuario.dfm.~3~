@@ -1,0 +1,8 @@
+object DMB_CadUsuario: TDMB_CadUsuario
+  Height = 480
+  Width = 640
+  object Qry_ValidaUser: TFDQuery
+    Left = 32
+    Top = 16
+  end
+end

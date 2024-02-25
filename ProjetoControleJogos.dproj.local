@@ -3,22 +3,25 @@
 	<Transactions>
     <Transaction>2023/12/05 08:37:16.000.270,=C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2024/02/15 08:48:42.000.289,=C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/02/15 09:26:52.000.275,C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\SCL\Projeto-Controle-Jogos\Inicial.dfm</Transaction>
-    <Transaction>2024/02/15 09:26:52.000.275,C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\SCL\Projeto-Controle-Jogos\Inicial.pas</Transaction>
-    <Transaction>2024/02/15 09:27:19.000.376,C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\SCL\Projeto-Controle-Jogos\ProjetoControleJogos.dproj</Transaction>
+    <Transaction>2024/02/15 09:26:52.000.275,C:\SCL\Projeto-Controle-Jogos\Inicial.pas=C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/02/15 09:26:52.000.275,C:\SCL\Projeto-Controle-Jogos\Inicial.dfm=C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/02/15 09:27:19.000.376,C:\SCL\Projeto-Controle-Jogos\ProjetoControleJogos.dproj=C:\Users\Presence\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2024/02/15 15:54:25.000.746,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
     <Transaction>2024/02/15 16:11:04.000.070,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
     <Transaction>2024/02/15 16:11:34.000.910,=C:\SCL\Projeto-Controle-Jogos\Forms\Login\U_login.pas</Transaction>
-    <Transaction>2024/02/15 16:23:35.000.780,=C:\SCL\Projeto-Controle-Jogos\Classes\U_constantes.pas</Transaction>
-    <Transaction>2024/02/15 16:23:35.000.804,=C:\SCL\Projeto-Controle-Jogos\Classes\uCrpt.pas</Transaction>
     <Transaction>2024/02/15 16:23:35.000.758,=C:\SCL\Projeto-Controle-Jogos\Classes\U_Biblioteca.pas</Transaction>
+    <Transaction>2024/02/15 16:23:35.000.804,=C:\SCL\Projeto-Controle-Jogos\Classes\uCrpt.pas</Transaction>
+    <Transaction>2024/02/15 16:23:35.000.780,=C:\SCL\Projeto-Controle-Jogos\Classes\U_constantes.pas</Transaction>
     <Transaction>2024/02/15 16:24:31.000.910,=C:\SCL\Projeto-Controle-Jogos\Forms\ConfigIni\U_ConfigIni.pas</Transaction>
     <Transaction>2024/02/15 16:27:18.000.680,=C:\SCL\Projeto-Controle-Jogos\Forms\Dados\U_Dados.pas</Transaction>
-    <Transaction>2024/02/24 14:27:32.703,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 14:27:57.500,C:\SCL\Projeto-Controle-Jogos\Forms\Login\DM_Login.dfm=C:\SCL\Projeto-Controle-Jogos\Unit1.dfm</Transaction>
-    <Transaction>2024/02/24 14:27:57.500,C:\SCL\Projeto-Controle-Jogos\Forms\Login\DM_Login.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 16:18:48.459,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 16:19:47.899,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\U_CadUsuario.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 16:19:47.899,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\U_CadUsuario.dfm=C:\SCL\Projeto-Controle-Jogos\Unit1.dfm</Transaction>
+    <Transaction>2024/02/24 14:27:32.000.703,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
+    <Transaction>2024/02/24 14:27:57.000.500,C:\SCL\Projeto-Controle-Jogos\Unit1.dfm=C:\SCL\Projeto-Controle-Jogos\Forms\Login\DM_Login.dfm</Transaction>
+    <Transaction>2024/02/24 14:27:57.000.500,C:\SCL\Projeto-Controle-Jogos\Unit1.pas=C:\SCL\Projeto-Controle-Jogos\Forms\Login\DM_Login.pas</Transaction>
+    <Transaction>2024/02/24 16:18:48.000.459,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
+    <Transaction>2024/02/24 16:19:47.000.899,C:\SCL\Projeto-Controle-Jogos\Unit1.pas=C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\U_CadUsuario.pas</Transaction>
+    <Transaction>2024/02/24 16:19:47.000.899,C:\SCL\Projeto-Controle-Jogos\Unit1.dfm=C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\U_CadUsuario.dfm</Transaction>
+    <Transaction>2024/02/24 19:38:41.000.608,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
+    <Transaction>2024/02/24 19:39:09.000.510,C:\SCL\Projeto-Controle-Jogos\Unit1.dfm=C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\DM_CadUsuario.dfm</Transaction>
+    <Transaction>2024/02/24 19:39:09.000.510,C:\SCL\Projeto-Controle-Jogos\Unit1.pas=C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\DM_CadUsuario.pas</Transaction>
   </Transactions>
 </BorlandProject>

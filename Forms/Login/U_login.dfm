@@ -2476,6 +2476,5 @@ object Frm_login: TFrm_login
     Color = clInactiveCaption
     ParentBackground = False
     TabOrder = 4
-    ExplicitWidth = 471
   end
 end

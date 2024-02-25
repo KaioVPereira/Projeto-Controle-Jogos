@@ -12,7 +12,8 @@ uses
   U_ConfigIni in 'Forms\ConfigIni\U_ConfigIni.pas' {frm_ConfigIni},
   U_Dados in 'Forms\Dados\U_Dados.pas' {dm_Dados: TDataModule},
   DM_Login in 'Forms\Login\DM_Login.pas' {DMB_Login: TDataModule},
-  U_CadUsuario in 'Forms\CadUsuario\U_CadUsuario.pas' {Frm_CadUsuario};
+  U_CadUsuario in 'Forms\CadUsuario\U_CadUsuario.pas' {Frm_CadUsuario},
+  DM_CadUsuario in 'Forms\CadUsuario\DM_CadUsuario.pas' {DMB_CadUsuario: TDataModule};
 
 {$R *.res}
 
@@ -22,5 +23,6 @@ begin
   Application.CreateForm(TFrm_Inicial, Frm_Inicial);
   Application.CreateForm(Tfrm_ConfigIni, frm_ConfigIni);
   Application.CreateForm(Tdm_Dados, dm_Dados);
+  Application.CreateForm(TDMB_CadUsuario, DMB_CadUsuario);
   Application.Run;
 end.

@@ -104,7 +104,7 @@ end;
 
 procedure TFrm_login.LB_CriarContaMouseLeave(Sender: TObject);
 begin
-   LB_CriarConta.Font.Color := clHighlightText;
+  LB_CriarConta.Font.Color := clHighlightText;
   LB_CriarConta.Font.Style := [fsItalic];
 end;
 

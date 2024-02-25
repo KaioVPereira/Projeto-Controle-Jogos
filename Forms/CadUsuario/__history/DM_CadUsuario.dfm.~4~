@@ -1,0 +1,9 @@
+object DMB_CadUsuario: TDMB_CadUsuario
+  Height = 480
+  Width = 640
+  object Qry_ValidaUser: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    Left = 40
+    Top = 16
+  end
+end
