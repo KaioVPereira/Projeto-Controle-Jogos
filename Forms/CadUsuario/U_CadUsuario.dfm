@@ -1969,11 +1969,12 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Visible = False
   end
   object Lb_ValidaUserExistente: TLabel
-    Left = 192
+    Left = 168
     Top = 142
-    Width = 261
+    Width = 341
     Height = 17
     Alignment = taCenter
+    AutoSize = False
     Caption = 'addsadsadsadsadsadasdsadsadadsadsadsadsadasds'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
@@ -1989,6 +1990,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Width = 110
     Height = 17
     Alignment = taCenter
+    AutoSize = False
     Caption = 'E-MAIL INV'#193'LIDO'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed

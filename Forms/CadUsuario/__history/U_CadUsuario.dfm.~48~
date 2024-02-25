@@ -5,7 +5,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
   BorderStyle = bsSingle
   Caption = 'CADASTRO DE USU'#193'RIO'
   ClientHeight = 713
-  ClientWidth = 639
+  ClientWidth = 650
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 639
+    Width = 650
     Height = 713
     Align = alClient
     Picture.Data = {
@@ -1849,6 +1849,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
       F4B18EA7518ED9DB8EF8FFD9}
     Stretch = True
     ExplicitTop = -8
+    ExplicitWidth = 639
   end
   object Label1: TLabel
     Left = 297
@@ -1968,11 +1969,27 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Visible = False
   end
   object Lb_ValidaUserExistente: TLabel
-    Left = 120
+    Left = 192
     Top = 142
-    Width = 433
+    Width = 261
     Height = 17
     Alignment = taCenter
+    Caption = 'addsadsadsadsadsadasdsadsadadsadsadsadsadasds'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object lb_ValidaEmail: TLabel
+    Left = 264
+    Top = 219
+    Width = 110
+    Height = 17
+    Alignment = taCenter
+    Caption = 'E-MAIL INV'#193'LIDO'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -13
@@ -1987,11 +2004,12 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Width = 321
     Height = 21
     Alignment = taCenter
+    CharCase = ecUpperCase
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 0
     OnChange = TXT_UsuarioChange
@@ -2006,9 +2024,10 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
+    OnChange = TXT_EmailChange
   end
   object txt_Numero: TEdit
     Left = 264
@@ -2019,7 +2038,8 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
+    NumbersOnly = True
     ParentFont = False
     TabOrder = 3
   end
@@ -2032,7 +2052,8 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
+    NumbersOnly = True
     ParentFont = False
     TabOrder = 2
   end
@@ -2046,7 +2067,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     PasswordChar = '*'
     TabOrder = 4
@@ -2062,7 +2083,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = []
+    Font.Style = [fsBold]
     ParentFont = False
     PasswordChar = '*'
     TabOrder = 5
