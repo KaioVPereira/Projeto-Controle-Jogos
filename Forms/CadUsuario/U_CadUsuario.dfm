@@ -4,8 +4,8 @@ object Frm_CadUsuario: TFrm_CadUsuario
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'CADASTRO DE USU'#193'RIO'
-  ClientHeight = 713
-  ClientWidth = 650
+  ClientHeight = 657
+  ClientWidth = 649
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object Frm_CadUsuario: TFrm_CadUsuario
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 650
-    Height = 713
+    Width = 649
+    Height = 657
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765FDE30000FFD8FFE000104A46494600010100000100
@@ -1850,6 +1850,7 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Stretch = True
     ExplicitTop = -8
     ExplicitWidth = 639
+    ExplicitHeight = 713
   end
   object Label1: TLabel
     Left = 297
@@ -1985,13 +1986,12 @@ object Frm_CadUsuario: TFrm_CadUsuario
     Visible = False
   end
   object lb_ValidaEmail: TLabel
-    Left = 264
+    Left = 168
     Top = 219
-    Width = 110
+    Width = 321
     Height = 17
     Alignment = taCenter
     AutoSize = False
-    Caption = 'E-MAIL INV'#193'LIDO'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -13

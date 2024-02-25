@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
-  Vcl.Imaging.GIFImg, Vcl.StdCtrls, Vcl.Buttons, FireDAC.Comp.Client;
+  Vcl.Imaging.GIFImg, Vcl.StdCtrls, Vcl.Buttons, FireDAC.Comp.Client,RegularExpressions;
 
 type
   TFrm_CadUsuario = class(TForm)
@@ -28,15 +28,18 @@ type
     SpeedButton2: TSpeedButton;
     lb_ValidaSenha: TLabel;
     Lb_ValidaUserExistente: TLabel;
+    lb_ValidaEmail: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure txt_ConfirmaSenhaChange(Sender: TObject);
     procedure txt_SenhaChange(Sender: TObject);
     procedure TXT_UsuarioChange(Sender: TObject);
+    procedure TXT_EmailChange(Sender: TObject);
   private
     Function ValidaSenhasIguais (Senha, ConfirmSenha :String): Boolean;
     Function ValidaUsuario (Query : TFDQuery; user : String ): Boolean;
+    Function ValidaEmailExitente (Query : TFDQuery; EMail : String): Boolean;
     { Private declarations }
   public
     { Public declarations }
@@ -49,7 +52,7 @@ implementation
 
 {$R *.dfm}
 
-uses DM_CadUsuario;
+uses DM_CadUsuario, U_Biblioteca;
 
 procedure TFrm_CadUsuario.Button2Click(Sender: TObject);
 begin
@@ -92,6 +95,27 @@ begin
   end;
 end;
 
+procedure TFrm_CadUsuario.TXT_EmailChange(Sender: TObject);
+begin
+   if ValidaEmail(TXT_Email.Text) = false then
+   begin
+    lb_ValidaEmail.Visible := true;
+   end
+   else
+   begin
+    if ValidaEmailExitente(DMB_CadUsuario.Qry_ValidaEmail, TXT_Email.Text) then
+    BEGIN
+      lb_ValidaEmail.Visible := false;
+    END
+    ELSE
+    BEGIN
+      lb_ValidaEmail.Caption := 'Este E-mail já existe cadastrado';
+      lb_ValidaEmail.Visible := true;
+    END;
+
+   end;
+end;
+
 procedure TFrm_CadUsuario.txt_SenhaChange(Sender: TObject);
 begin
   if txt_ConfirmaSenha.Text <> '' then
@@ -104,14 +128,61 @@ begin
     begin
       lb_ValidaSenha.Visible := false;
     end;
-  END;
+  END
+  else
+  begin
+    lb_ValidaSenha.Visible := false;
+  end;
 end;
 
 procedure TFrm_CadUsuario.TXT_UsuarioChange(Sender: TObject);
 begin
-  If ValidaUsuario(DMB_CadUsuario.Qry_ValidaUser,TXT_Usuario.Text) =  False then
+
+  if TXT_Usuario.Text <> '' then
   begin
-    Lb_ValidaUserExistente.Visible := true;
+    If ValidaUsuario(DMB_CadUsuario.Qry_ValidaUser,TXT_Usuario.Text) =  False then
+    begin
+      Lb_ValidaUserExistente.Visible := true;
+      Lb_ValidaUserExistente.Caption := 'Este nome de usuário já existe';
+      Lb_ValidaUserExistente.Alignment := taCenter;
+      Lb_ValidaUserExistente.Font.Color := clRed;
+    end
+    Else
+    begin
+      if VerificaCaracteresEspeciais(TXT_Usuario.Text) = false then
+      begin
+        Lb_ValidaUserExistente.Visible := true;
+        Lb_ValidaUserExistente.Caption := 'Usuário Válido';
+        Lb_ValidaUserExistente.Alignment := taCenter;
+        Lb_ValidaUserExistente.Font.Color := clGreen;
+      end
+      else
+      begin
+        Lb_ValidaUserExistente.Visible := true;
+        Lb_ValidaUserExistente.Caption  := 'Não pode ser utilizado Caractéres especiais';
+        Lb_ValidaUserExistente.Alignment := taCenter;
+        Lb_ValidaUserExistente.Font.Color := clred;
+      end;
+    end
+  end
+  else
+  begin
+    Lb_ValidaUserExistente.Visible := False;
+  end;
+
+end;
+
+function TFrm_CadUsuario.ValidaEmailExitente(Query: TFDQuery; EMail: string): Boolean;
+begin
+  Query.ParamByName('EMAIL').AsString := EMail;
+  Query.Open();
+  if Query.Eof then
+  begin
+    result := true
+  end
+  else
+  begin
+    result := false;
   end;
 end;
 
@@ -143,5 +214,6 @@ begin
   end;
   QUERY.Close;
 end;
+
 
 end.

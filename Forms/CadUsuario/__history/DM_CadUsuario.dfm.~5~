@@ -18,21 +18,4 @@ object DMB_CadUsuario: TDMB_CadUsuario
         Value = Null
       end>
   end
-  object Qry_ValidaEmail: TFDQuery
-    Connection = dm_Dados.fd_Connection
-    SQL.Strings = (
-      'SELECT 1 FROM USUARIO'
-      'WHERE'
-      'EMAIL = :EMAIL')
-    Left = 136
-    Top = 16
-    ParamData = <
-      item
-        Name = 'EMAIL'
-        DataType = ftString
-        ParamType = ptInput
-        Size = 100
-        Value = Null
-      end>
-  end
 end

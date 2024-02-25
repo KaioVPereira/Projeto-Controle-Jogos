@@ -39,6 +39,7 @@ type
   private
     Function ValidaSenhasIguais (Senha, ConfirmSenha :String): Boolean;
     Function ValidaUsuario (Query : TFDQuery; user : String ): Boolean;
+    Function ValidaEmailExitente (Query : TFDQuery; EMail : String): Boolean;
     { Private declarations }
   public
     { Public declarations }
@@ -99,10 +100,20 @@ begin
    if ValidaEmail(TXT_Email.Text) = false then
    begin
     lb_ValidaEmail.Visible := true;
+    lb_ValidaEmail.Caption := 'E-mail inválido';
    end
    else
    begin
-    lb_ValidaEmail.Visible := false;
+    if ValidaEmailExitente(DMB_CadUsuario.Qry_ValidaEmail, TXT_Email.Text) then
+    BEGIN
+      lb_ValidaEmail.Visible := false;
+    END
+    ELSE
+    BEGIN
+      lb_ValidaEmail.Caption := 'Este E-mail já existe cadastrado';
+      lb_ValidaEmail.Visible := true;
+    END;
+
    end;
 end;
 
@@ -160,6 +171,20 @@ begin
     Lb_ValidaUserExistente.Visible := False;
   end;
 
+end;
+
+function TFrm_CadUsuario.ValidaEmailExitente(Query: TFDQuery; EMail: string): Boolean;
+begin
+  Query.ParamByName('EMAIL').AsString := EMail;
+  Query.Open();
+  if Query.Eof then
+  begin
+    result := true
+  end
+  else
+  begin
+    result := false;
+  end;
 end;
 
 function TFrm_CadUsuario.ValidaSenhasIguais(Senha,
