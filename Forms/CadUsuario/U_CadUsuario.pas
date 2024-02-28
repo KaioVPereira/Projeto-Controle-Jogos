@@ -65,10 +65,10 @@ begin
   if (ValidaSenhasIguais(txt_Senha.Text, txt_ConfirmaSenha.Text) and
       ValidaUsuario(DMB_CadUsuario.Qry_ValidaUser, TXT_Usuario.Text) AND
       ValidaEmailExitente(DMB_CadUsuario.Qry_ValidaEmail, TXT_Email.Text)AND
-      ValidaNickName(DMB_CadUsuario.Qyr_ValidaNick, txt_NickName.Text))
+      ValidaNickName(DMB_CadUsuario.Qyr_ValidaNick, txt_NickName.Text) AND
+      ValidaEmail(TXT_Email.Text))
       AND
-      (NOT ValidaEmail(TXT_Email.Text)and
-       NOT VerificaCaracteresEspeciais(TXT_Usuario.Text))
+      (NOT VerificaCaracteresEspeciais(TXT_Usuario.Text))
       then
       BEGIN
         DMB_CadUsuario.Qry_InsereUser.ParamByName('NICKNAME').AsString := txt_NickName.Text;
