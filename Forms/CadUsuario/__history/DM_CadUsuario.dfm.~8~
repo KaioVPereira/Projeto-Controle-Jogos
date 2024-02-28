@@ -1,0 +1,44 @@
+object DMB_CadUsuario: TDMB_CadUsuario
+  OldCreateOrder = True
+  Height = 480
+  Width = 640
+  object Qry_ValidaUser: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    SQL.Strings = (
+      'SELECT 1 FROM USUARIO'
+      'WHERE'
+      'USUARIO = :USUARIO')
+    Left = 40
+    Top = 16
+    ParamData = <
+      item
+        Name = 'USUARIO'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 40
+        Value = Null
+      end>
+  end
+  object Qry_ValidaEmail: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    SQL.Strings = (
+      'SELECT 1 FROM USUARIO'
+      'WHERE'
+      'EMAIL = :EMAIL')
+    Left = 120
+    Top = 16
+    ParamData = <
+      item
+        Name = 'EMAIL'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 100
+        Value = Null
+      end>
+  end
+  object Qry_InsereUser: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    Left = 208
+    Top = 16
+  end
+end

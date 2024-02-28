@@ -1,0 +1,32 @@
+unit DM_CadUsuario;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TDMB_CadUsuario = class(TDataModule)
+    Qry_ValidaUser: TFDQuery;
+    Qry_ValidaEmail: TFDQuery;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DMB_CadUsuario: TDMB_CadUsuario;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses U_CadUsuario, U_Dados;
+
+{$R *.dfm}
+
+end.

@@ -12,6 +12,8 @@ type
   TDMB_CadUsuario = class(TDataModule)
     Qry_ValidaUser: TFDQuery;
     Qry_ValidaEmail: TFDQuery;
+    Qry_InsereUser: TFDQuery;
+    Qyr_ValidaNick: TFDQuery;
   private
     { Private declarations }
   public

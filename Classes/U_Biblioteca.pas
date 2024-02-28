@@ -228,11 +228,11 @@ begin
   Result := regex.IsMatch(texto);
 end;
 
-function ValidaEmail(const email: string): Boolean;
+function ValidaEmail(const email : string): Boolean;
 var
 regex: TRegEx;
 begin
-  regex := TRegEx.Create('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
+  regex := TRegEx.Create('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$');
   Result := regex.IsMatch(email);
 end;
 end.

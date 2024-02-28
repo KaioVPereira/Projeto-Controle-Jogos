@@ -1,13 +1,14 @@
 object DMB_Login: TDMB_Login
+  OldCreateOrder = True
   Height = 480
   Width = 640
   object fd_QueryLogin: TFDQuery
     Connection = dm_Dados.fd_Connection
     SQL.Strings = (
-      'SELECT LOGIN,'
+      'SELECT USUARIO,'
       '       SENHA '
       'FROM USUARIO'
-      'WHERE LOGIN = :LOGIN')
+      'WHERE USUARIO = :LOGIN')
     Left = 552
     Top = 408
     ParamData = <

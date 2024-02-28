@@ -11,9 +11,11 @@ object Frm_login: TFrm_login
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  OldCreateOrder = True
   Position = poScreenCenter
   OnClose = FormClose
   OnCreate = FormCreate
+  PixelsPerInch = 96
   TextHeight = 13
   object SpeedButton1: TSpeedButton
     Left = 408
@@ -2390,6 +2392,7 @@ object Frm_login: TFrm_login
     Font.Name = 'Tahoma'
     Font.Style = [fsItalic]
     ParentFont = False
+    Transparent = True
     OnClick = LB_CriarContaClick
     OnMouseEnter = LB_CriarContaMouseEnter
     OnMouseLeave = LB_CriarContaMouseLeave
@@ -2407,6 +2410,7 @@ object Frm_login: TFrm_login
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
+    Transparent = True
   end
   object LB_Senha: TLabel
     Left = 216
@@ -2421,6 +2425,7 @@ object Frm_login: TFrm_login
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
+    Transparent = True
   end
   object txt_login: TEdit
     Left = 128
