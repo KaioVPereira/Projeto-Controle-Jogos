@@ -18,10 +18,13 @@
     <Transaction>2024/02/24 14:27:57.000.500,C:\SCL\Projeto-Controle-Jogos\Forms\Login\DM_Login.dfm=C:\SCL\Projeto-Controle-Jogos\Unit1.dfm</Transaction>
     <Transaction>2024/02/24 14:27:57.000.500,C:\SCL\Projeto-Controle-Jogos\Forms\Login\DM_Login.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
     <Transaction>2024/02/24 16:18:48.000.459,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 16:19:47.000.899,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\U_CadUsuario.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
     <Transaction>2024/02/24 16:19:47.000.899,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\U_CadUsuario.dfm=C:\SCL\Projeto-Controle-Jogos\Unit1.dfm</Transaction>
+    <Transaction>2024/02/24 16:19:47.000.899,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\U_CadUsuario.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
     <Transaction>2024/02/24 19:38:41.000.608,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
-    <Transaction>2024/02/24 19:39:09.000.510,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\DM_CadUsuario.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
     <Transaction>2024/02/24 19:39:09.000.510,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\DM_CadUsuario.dfm=C:\SCL\Projeto-Controle-Jogos\Unit1.dfm</Transaction>
+    <Transaction>2024/02/24 19:39:09.000.510,C:\SCL\Projeto-Controle-Jogos\Forms\CadUsuario\DM_CadUsuario.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
+    <Transaction>2024/03/07 17:28:25.174,=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
+    <Transaction>2024/03/07 17:29:25.824,C:\SCL\Projeto-Controle-Jogos\Forms\Menu\U_Menu.pas=C:\SCL\Projeto-Controle-Jogos\Unit1.pas</Transaction>
+    <Transaction>2024/03/07 17:29:25.824,C:\SCL\Projeto-Controle-Jogos\Forms\Menu\U_Menu.dfm=C:\SCL\Projeto-Controle-Jogos\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>
