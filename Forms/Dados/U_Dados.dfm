@@ -6,7 +6,7 @@ object dm_Dados: Tdm_Dados
   object fd_Connection: TFDConnection
     Params.Strings = (
       'Protocol=TCPIP'
-      'Server=127.0.0.1'
+      'Server=SUPORTE3'
       'Port=3051'
       'User_Name=SYSDBA'
       'Password=masterkey'

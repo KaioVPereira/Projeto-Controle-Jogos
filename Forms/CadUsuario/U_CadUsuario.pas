@@ -79,6 +79,23 @@ begin
         DMB_CadUsuario.Qry_InsereUser.ParamByName('NUMERO').AsString := txt_Numero.Text;
 
         DMB_CadUsuario.Qry_InsereUser.ExecSQL;
+
+        IF NOT ValidaUsuario (DMB_CadUsuario.Qry_ValidaUser, TXT_Usuario.Text) then
+        BEGIN
+          MsgAtencao('Conta cadastrada com sucesso');
+          TXT_Usuario.Clear;
+          TXT_Email.Clear;
+          txt_Numero.Clear;
+          txt_ddd.Clear;
+          txt_Senha.Clear;
+          txt_ConfirmaSenha.Clear;
+          txt_NickName.Clear;
+          self.Close
+        END
+        ELSE
+        BEGIN
+           MsgAtencao('Ocorreu algum erro para cadastrar a conta, tente novamente');
+        END;
       END
       ELSE
       BEGIN
@@ -131,24 +148,28 @@ end;
 
 procedure TFrm_CadUsuario.TXT_EmailChange(Sender: TObject);
 begin
-   if not ValidaEmail(TXT_Email.Text)  then
-   begin
-    lb_ValidaEmail.Visible := true;
-    lb_ValidaEmail.Caption := 'E-mail inválido';
-   end
-   else
-   begin
-    if ValidaEmailExitente(DMB_CadUsuario.Qry_ValidaEmail, TXT_Email.Text) then
-    BEGIN
-      lb_ValidaEmail.Visible := false;
-    END
-    ELSE
-    BEGIN
-      lb_ValidaEmail.Caption := 'Este E-mail já existe cadastrado';
+if TXT_Email.Text <>'' then
+  begin
+    if not ValidaEmail(TXT_Email.Text)  then
+     begin
       lb_ValidaEmail.Visible := true;
-    END;
+      lb_ValidaEmail.Caption := 'E-mail inválido';
+     end
+     else
+     begin
+      if ValidaEmailExitente(DMB_CadUsuario.Qry_ValidaEmail, TXT_Email.Text) then
+      BEGIN
+        lb_ValidaEmail.Visible := false;
+      END
+      ELSE
+      BEGIN
+        lb_ValidaEmail.Caption := 'Este E-mail já existe cadastrado';
+        lb_ValidaEmail.Visible := true;
+      END;
 
-   end;
+     end;
+  end;
+
 end;
 
 procedure TFrm_CadUsuario.txt_NickNameChange(Sender: TObject);
