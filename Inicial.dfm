@@ -3,7 +3,7 @@ object Frm_Inicial: TFrm_Inicial
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Incial'
+  Caption = 'Inicial'
   ClientHeight = 360
   ClientWidth = 587
   Color = clBtnFace
@@ -5379,7 +5379,6 @@ object Frm_Inicial: TFrm_Inicial
       527B01A9E15FF91934EFFAEEBFCEBDBA8A2BF42E1BFE0CFD7F4678D8EF8A2251
       4515F6AB63CB3FFFD9}
     Stretch = True
-    OnClick = Img_BtStartClick
     ExplicitLeft = 208
     ExplicitTop = 64
   end
@@ -9095,6 +9094,7 @@ object Frm_Inicial: TFrm_Inicial
       7A26207D251F7B24227724227024256F252373282075281F75281F75281F7528
       1F75281F75281F75281F77281F77281F77281F77281F78271F00}
     Stretch = True
+    OnClick = Img_BtMenuClick
     ExplicitLeft = 208
     ExplicitTop = 176
   end

@@ -13,7 +13,7 @@ type
     Img_BtStart: TImage;
     Img_BtMenu: TImage;
     procedure FormShow(Sender: TObject);
-    procedure Img_BtStartClick(Sender: TObject);
+    procedure Img_BtMenuClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +34,7 @@ begin
   AbreFormShowModal(Tfrm_Login, Frm_Login);
 end;
 
-procedure TFrm_Inicial.Img_BtStartClick(Sender: TObject);
+procedure TFrm_Inicial.Img_BtMenuClick(Sender: TObject);
 begin
   AbreForm(TFrm_Menu, Frm_Menu);
 end;
