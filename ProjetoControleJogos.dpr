@@ -14,7 +14,8 @@ uses
   DM_Login in 'Forms\Login\DM_Login.pas' {DMB_Login: TDataModule},
   U_CadUsuario in 'Forms\CadUsuario\U_CadUsuario.pas' {Frm_CadUsuario},
   DM_CadUsuario in 'Forms\CadUsuario\DM_CadUsuario.pas' {DMB_CadUsuario: TDataModule},
-  U_Menu in 'Forms\Menu\U_Menu.pas' {Frm_Menu};
+  U_Menu in 'Forms\Menu\U_Menu.pas' {Frm_Menu},
+  U_CadDesenvolvedora in 'Forms\CadDesenvolvedora\U_CadDesenvolvedora.pas' {Frm_CadDesenv};
 
 {$R *.res}
 
@@ -26,5 +27,6 @@ begin
   Application.CreateForm(Tdm_Dados, dm_Dados);
   Application.CreateForm(TDMB_CadUsuario, DMB_CadUsuario);
   Application.CreateForm(TFrm_Menu, Frm_Menu);
+  Application.CreateForm(TFrm_CadDesenv, Frm_CadDesenv);
   Application.Run;
 end.

@@ -4,8 +4,8 @@ object Frm_Menu: TFrm_Menu
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Menu'
-  ClientHeight = 550
-  ClientWidth = 944
+  ClientHeight = 583
+  ClientWidth = 974
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,8 +17,8 @@ object Frm_Menu: TFrm_Menu
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 944
-    Height = 550
+    Width = 974
+    Height = 583
     Align = alClient
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000007800000
@@ -36474,8 +36474,8 @@ object Frm_Menu: TFrm_Menu
       851AE601D847F5351405C29DDEA73351BF7EBD0A0E637982DE93605CFEFAFF5F
       5918FF49837BE30000000049454E44AE426082}
     Stretch = True
-    ExplicitLeft = 120
-    ExplicitTop = 48
+    ExplicitWidth = 953
+    ExplicitHeight = 553
   end
   object Image2: TImage
     Left = 376
@@ -36834,7 +36834,7 @@ object Frm_Menu: TFrm_Menu
     Left = 312
     Top = 152
     Width = 345
-    Height = 49
+    Height = 41
     Cursor = crHandPoint
     Glyph.Data = {
       9E6D0100424D9E6D01000000000042000000280000005D010000430000000100
@@ -49124,5 +49124,6 @@ object Frm_Menu: TFrm_Menu
       29FF681E29FF681E29FF681E29FF681E29FF681E29FF681E29FF681E29FF681E
       29FF681E29FF681E29FF681E29FF681E29FF681E29FF681E29FF681E29FF681E
       29FF681E29FF}
+    OnClick = btn_CadDesenvolvedoraClick
   end
 end

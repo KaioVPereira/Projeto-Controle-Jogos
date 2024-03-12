@@ -15,6 +15,7 @@ type
     Btn_CadPlataforma: TSpeedButton;
     Btn_CadCategoria: TSpeedButton;
     btn_CadDesenvolvedora: TSpeedButton;
+    procedure btn_CadDesenvolvedoraClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -27,5 +28,12 @@ var
 implementation
 
 {$R *.dfm}
+
+uses U_CadDesenvolvedora, U_Biblioteca;
+
+procedure TFrm_Menu.btn_CadDesenvolvedoraClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadDesenv, Frm_CadDesenv);
+end;
 
 end.
