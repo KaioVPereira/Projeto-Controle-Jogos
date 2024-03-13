@@ -13,13 +13,19 @@ uses
 type
   TFrm_CadDesenv = class(TForm)
     Image1: TImage;
-    Edit1: TEdit;
+    txt_NomeDesenvol: TEdit;
     Label1: TLabel;
     Button1: TButton;
     Button2: TButton;
-    FDQuery1: TFDQuery;
+    Qry_CadDesenvol: TFDQuery;
+    Qry_ValidaDesenvol: TFDQuery;
+    LB_ValidaDesenvol: TLabel;
+    procedure Button2Click(Sender: TObject);
+    procedure txt_NomeDesenvolChange(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
+    function ValidaDesenvol (Query : TFDQuery ; Texto:String): Boolean;
   public
     { Public declarations }
   end;
@@ -32,5 +38,53 @@ implementation
 {$R *.dfm}
 
 uses U_Dados;
+
+procedure TFrm_CadDesenv.Button1Click(Sender: TObject);
+begin
+  Self.Close;
+end;
+
+procedure TFrm_CadDesenv.Button2Click(Sender: TObject);
+begin
+  if txt_NomeDesenvol.Text <> '' then
+  begin
+    Qry_CadDesenvol.ParamByName('DESENVOLVEDORA').Value := txt_NomeDesenvol.Text;
+    Qry_CadDesenvol.ExecSQL;
+    txt_NomeDesenvol.Clear;
+    MsgAtencao('Desenvolvedora Cadastrada');
+
+
+  end;
+
+end;
+
+procedure TFrm_CadDesenv.txt_NomeDesenvolChange(Sender: TObject);
+begin
+  if txt_NomeDesenvol.Text <> '' then
+  begin
+    if NOT ValidaDesenvol (Qry_ValidaDesenvol, txt_NomeDesenvol.Text) then
+      begin
+      LB_ValidaDesenvol.Visible := True;
+      end
+    else
+      begin
+      LB_ValidaDesenvol.Visible := False;
+      end;
+  end
+  else
+  begin
+    LB_ValidaDesenvol.Visible := False;
+  end;
+
+end;
+
+function TFrm_CadDesenv.ValidaDesenvol(Query: TFDQuery; Texto: String): Boolean;
+begin
+  Query.Close;
+  Query.ParamByName('DESENVOLVEDORA').AsString := Texto;
+  Query.Open();
+  Result := Query.Eof;
+  Query.Close;
+end;
 
 end.

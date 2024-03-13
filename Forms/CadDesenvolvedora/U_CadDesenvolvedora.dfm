@@ -1,6 +1,8 @@
 object Frm_CadDesenv: TFrm_CadDesenv
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Cadastro Desenvolvedora'
   ClientHeight = 479
   ClientWidth = 714
@@ -10,6 +12,9 @@ object Frm_CadDesenv: TFrm_CadDesenv
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  DesignSize = (
+    714
+    479)
   TextHeight = 15
   object Image1: TImage
     Left = 0
@@ -1062,10 +1067,11 @@ object Frm_CadDesenv: TFrm_CadDesenv
     ExplicitHeight = 454
   end
   object Label1: TLabel
-    Left = 288
+    Left = 286
     Top = 184
     Width = 168
     Height = 15
+    Anchors = []
     Caption = 'NOME DA DESENVOLVEDORA:'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText
@@ -1073,31 +1079,60 @@ object Frm_CadDesenv: TFrm_CadDesenv
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
+    ExplicitLeft = 288
   end
-  object Edit1: TEdit
+  object LB_ValidaDesenvol: TLabel
     Left = 232
+    Top = 256
+    Width = 281
+    Height = 15
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Desenvolvedora j'#225' cadastrada.'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+    Visible = False
+  end
+  object txt_NomeDesenvol: TEdit
+    Left = 230
     Top = 216
     Width = 281
     Height = 23
+    Alignment = taCenter
+    Anchors = []
     TabOrder = 0
+    OnChange = txt_NomeDesenvolChange
+    ExplicitLeft = 228
   end
   object Button1: TButton
-    Left = 248
+    Left = 247
     Top = 296
     Width = 97
     Height = 25
-    Caption = 'CANCELAR'
+    Anchors = []
+    Caption = 'VOLTAR'
     TabOrder = 1
+    OnClick = Button1Click
+    ExplicitLeft = 245
+    ExplicitTop = 295
   end
   object Button2: TButton
-    Left = 392
+    Left = 389
     Top = 296
     Width = 97
     Height = 25
+    Anchors = []
     Caption = 'GRAVAR'
     TabOrder = 2
+    OnClick = Button2Click
+    ExplicitLeft = 387
+    ExplicitTop = 295
   end
-  object FDQuery1: TFDQuery
+  object Qry_CadDesenvol: TFDQuery
     Connection = dm_Dados.fd_Connection
     SQL.Strings = (
       
@@ -1106,8 +1141,25 @@ object Frm_CadDesenv: TFrm_CadDesenv
       
         '                           (GEN_ID(GEN_DESENVOLVEDORA_ID,1), :DE' +
         'SENVOLVEDORA)')
-    Left = 336
-    Top = 392
+    Left = 328
+    Top = 376
+    ParamData = <
+      item
+        Name = 'DESENVOLVEDORA'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 30
+        Value = Null
+      end>
+  end
+  object Qry_ValidaDesenvol: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    SQL.Strings = (
+      'SELECT 1 FROM DESENVOLVEDORA WHERE'
+      'UPPER (NOME_DESENVOL) = UPPER (:DESENVOLVEDORA)'
+      '')
+    Left = 440
+    Top = 376
     ParamData = <
       item
         Name = 'DESENVOLVEDORA'
