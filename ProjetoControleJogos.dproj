@@ -173,6 +173,12 @@
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="EXE\ProjetoControleJogos.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="EXE\ProjetoControleJogos.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>ProjetoControleJogos.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Win32\Release\ProjetoControleJogos.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>ProjetoControleJogos.exe</RemoteName>
