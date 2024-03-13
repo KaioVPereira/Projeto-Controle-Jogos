@@ -12,6 +12,7 @@ object Frm_CadDesenv: TFrm_CadDesenv
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   DesignSize = (
     714
     479)
@@ -1062,12 +1063,10 @@ object Frm_CadDesenv: TFrm_CadDesenv
       E141A925A3E4EE70763E1CB872391CB8722F18C673E1CFF28308A4E13854915D
       9B4884AB77EA7FFFD9}
     Stretch = True
-    ExplicitLeft = -24
-    ExplicitWidth = 749
-    ExplicitHeight = 454
+    ExplicitTop = -8
   end
   object Label1: TLabel
-    Left = 286
+    Left = 279
     Top = 184
     Width = 168
     Height = 15
@@ -1082,8 +1081,8 @@ object Frm_CadDesenv: TFrm_CadDesenv
     ExplicitLeft = 288
   end
   object LB_ValidaDesenvol: TLabel
-    Left = 232
-    Top = 256
+    Left = 223
+    Top = 245
     Width = 281
     Height = 15
     Alignment = taCenter
@@ -1097,8 +1096,26 @@ object Frm_CadDesenv: TFrm_CadDesenv
     ParentFont = False
     Visible = False
   end
+  object LB_Consulta: TLabel
+    Left = 111
+    Top = 351
+    Width = 517
+    Height = 15
+    Cursor = crHandPoint
+    Caption = 
+      'Antes de cadastrar, valide se o cadastro j'#225' existe, clique aqui ' +
+      'para consultar os cadastros existentes'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clHighlightText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsItalic]
+    ParentFont = False
+    OnMouseEnter = LB_ConsultaMouseEnter
+    OnMouseLeave = LB_ConsultaMouseLeave
+  end
   object txt_NomeDesenvol: TEdit
-    Left = 230
+    Left = 223
     Top = 216
     Width = 281
     Height = 23
@@ -1106,31 +1123,28 @@ object Frm_CadDesenv: TFrm_CadDesenv
     Anchors = []
     TabOrder = 0
     OnChange = txt_NomeDesenvolChange
-    ExplicitLeft = 228
+    ExplicitLeft = 216
+    ExplicitTop = 200
   end
   object Button1: TButton
-    Left = 247
-    Top = 296
+    Left = 242
+    Top = 272
     Width = 97
     Height = 25
     Anchors = []
     Caption = 'VOLTAR'
     TabOrder = 1
     OnClick = Button1Click
-    ExplicitLeft = 245
-    ExplicitTop = 295
   end
   object Button2: TButton
-    Left = 389
-    Top = 296
+    Left = 380
+    Top = 272
     Width = 97
     Height = 25
     Anchors = []
     Caption = 'GRAVAR'
     TabOrder = 2
     OnClick = Button2Click
-    ExplicitLeft = 387
-    ExplicitTop = 295
   end
   object Qry_CadDesenvol: TFDQuery
     Connection = dm_Dados.fd_Connection

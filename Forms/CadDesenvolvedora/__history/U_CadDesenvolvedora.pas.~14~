@@ -20,12 +20,9 @@ type
     Qry_CadDesenvol: TFDQuery;
     Qry_ValidaDesenvol: TFDQuery;
     LB_ValidaDesenvol: TLabel;
-    LB_Consulta: TLabel;
     procedure Button2Click(Sender: TObject);
     procedure txt_NomeDesenvolChange(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure LB_ConsultaMouseEnter(Sender: TObject);
-    procedure LB_ConsultaMouseLeave(Sender: TObject);
   private
     { Private declarations }
     function ValidaDesenvol (Query : TFDQuery ; Texto:String): Boolean;
@@ -51,42 +48,14 @@ procedure TFrm_CadDesenv.Button2Click(Sender: TObject);
 begin
   if txt_NomeDesenvol.Text <> '' then
   begin
-    if ValidaDesenvol(Qry_ValidaDesenvol, txt_NomeDesenvol.Text) then
-    begin
-      Qry_CadDesenvol.ParamByName('DESENVOLVEDORA').Value := txt_NomeDesenvol.Text;
-      Qry_CadDesenvol.ExecSQL;
-      if not  ValidaDesenvol(Qry_ValidaDesenvol, txt_NomeDesenvol.Text) then
-      begin
-        txt_NomeDesenvol.Clear;
-        MsgInformacao('Desenvolvedora cadastrada sucesso');
-      end
-      else
-      begin
-        MsgAtencao('Ocorreu algum erro para efeutar o cadastro, tente novamente')
-      end;
-    end
-    else
-    begin
-      MsgAtencao('Desenvolvedora já cadastrada anteriormente')
-    end;
-  end
-  else
-  begin
-    MsgAtencao('O nome da Desenvolvedora não pode ser em branco')
+    Qry_CadDesenvol.ParamByName('DESENVOLVEDORA').Value := txt_NomeDesenvol.Text;
+    Qry_CadDesenvol.ExecSQL;
+    txt_NomeDesenvol.Clear;
+    MsgAtencao('Desenvolvedora Cadastrada');
+
+
   end;
 
-end;
-
-procedure TFrm_CadDesenv.LB_ConsultaMouseEnter(Sender: TObject);
-begin
-  LB_Consulta.Font.Color := clHighlight;
-  LB_Consulta.Font.Style := [fsUnderline,fsItalic];
-end;
-
-procedure TFrm_CadDesenv.LB_ConsultaMouseLeave(Sender: TObject);
-begin
-   LB_Consulta.Font.Color := clHighlightText;
-   LB_Consulta.Font.Style := [fsItalic];
 end;
 
 procedure TFrm_CadDesenv.txt_NomeDesenvolChange(Sender: TObject);
