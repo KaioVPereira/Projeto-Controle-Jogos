@@ -14,14 +14,14 @@ type
   TFrm_login = class(TForm)
     txt_login: TEdit;
     txt_senha: TEdit;
-    LB_senha: TLabel;
-    LB_nome: TLabel;
     btn_logar: TButton;
     btn_cancelar: TButton;
     Panel1: TPanel;
     SpeedButton1: TSpeedButton;
+    IMG_Fundo: TImage;
     LB_CriarConta: TLabel;
-    Image1: TImage;
+    LB_Usuario: TLabel;
+    LB_Senha: TLabel;
     procedure btn_cancelarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -30,6 +30,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure LB_CriarContaMouseEnter(Sender: TObject);
     procedure LB_CriarContaMouseLeave(Sender: TObject);
+    procedure LB_CriarContaClick(Sender: TObject);
   private
 
     function Login (pLogin, pSenha: string):Boolean;
@@ -45,7 +46,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_Dados, uCrpt, DM_Login;
+uses U_Dados, uCrpt, DM_Login, U_CadUsuario;
 
 procedure TFrm_login.btn_cancelarClick(Sender: TObject);
 begin
@@ -89,15 +90,21 @@ begin
   LB_CriarConta.BringToFront;
 end;
 
+
+procedure TFrm_login.LB_CriarContaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadUsuario, Frm_CadUsuario);
+end;
+
 procedure TFrm_login.LB_CriarContaMouseEnter(Sender: TObject);
 begin
-  LB_CriarConta.Font.Color := clHighlight;
+   LB_CriarConta.Font.Color := clHighlight;
   LB_CriarConta.Font.Style := [fsUnderline,fsItalic];
 end;
 
 procedure TFrm_login.LB_CriarContaMouseLeave(Sender: TObject);
 begin
-  LB_CriarConta.Font.Color := clWindowText;
+  LB_CriarConta.Font.Color := clHighlightText;
   LB_CriarConta.Font.Style := [fsItalic];
 end;
 

@@ -1,0 +1,52 @@
+unit U_CadPlataforma;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+type
+  TFrm_CadPlataforma = class(TForm)
+    Qry_CadPlat: TFDQuery;
+    Qry_ValidaPlat: TFDQuery;
+    Image1: TImage;
+    Button1: TButton;
+    Button2: TButton;
+    Image2: TImage;
+    Label1: TLabel;
+    LB_Consulta: TLabel;
+    LB_ValidaDesenvol: TLabel;
+    txt_NomeDesenvol: TEdit;
+    procedure LB_ConsultaMouseEnter(Sender: TObject);
+    procedure LB_ConsultaMouseLeave(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_CadPlataforma: TFrm_CadPlataforma;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm_CadPlataforma.LB_ConsultaMouseEnter(Sender: TObject);
+begin
+  LB_Consulta.Font.Color := clHighlight;
+  LB_Consulta.Font.Style := [fsUnderline,fsItalic];
+end;
+
+procedure TFrm_CadPlataforma.LB_ConsultaMouseLeave(Sender: TObject);
+begin
+  LB_Consulta.Font.Color := clHighlightText;
+  LB_Consulta.Font.Style := [fsItalic];
+end;
+
+end.

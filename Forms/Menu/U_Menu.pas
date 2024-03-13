@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.Imaging.jpeg,
-  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, U_CadPlataforma, U_CadTipoCat, U_CadJogos;
 
 type
   TFrm_Menu = class(TForm)
@@ -16,6 +16,9 @@ type
     Btn_CadCategoria: TSpeedButton;
     btn_CadDesenvolvedora: TSpeedButton;
     procedure btn_CadDesenvolvedoraClick(Sender: TObject);
+    procedure Btn_CadPlataformaClick(Sender: TObject);
+    procedure Btn_CadCategoriaClick(Sender: TObject);
+    procedure Btn_CadJogosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,9 +34,24 @@ implementation
 
 uses U_CadDesenvolvedora, U_Biblioteca;
 
+procedure TFrm_Menu.Btn_CadCategoriaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadTipoCat, Frm_CadTipoCat);
+end;
+
 procedure TFrm_Menu.btn_CadDesenvolvedoraClick(Sender: TObject);
 begin
   AbreFormShowModal(TFrm_CadDesenv, Frm_CadDesenv);
+end;
+
+procedure TFrm_Menu.Btn_CadJogosClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadJogos, Frm_CadJogos);
+end;
+
+procedure TFrm_Menu.Btn_CadPlataformaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadPlataforma, Frm_CadPlataforma);
 end;
 
 end.

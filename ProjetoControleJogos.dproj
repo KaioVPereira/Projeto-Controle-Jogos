@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>ProjetoControleJogos.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -145,6 +145,18 @@
         </DCCReference>
         <DCCReference Include="Forms\CadDesenvolvedora\U_CadDesenvolvedora.pas">
             <Form>Frm_CadDesenv</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\CadPlataforma\U_CadPlataforma.pas">
+            <Form>Frm_CadPlataforma</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\CadTipoCat\U_CadTipoCat.pas">
+            <Form>Frm_CadTipoCat</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\CadJogos\U_CadJogos.pas">
+            <Form>Frm_CadJogos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
