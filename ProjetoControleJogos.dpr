@@ -28,12 +28,5 @@ begin
   Application.CreateForm(TFrm_Inicial, Frm_Inicial);
   Application.CreateForm(Tfrm_ConfigIni, frm_ConfigIni);
   Application.CreateForm(Tdm_Dados, dm_Dados);
-  Application.CreateForm(TDMB_CadUsuario, DMB_CadUsuario);
-  Application.CreateForm(TFrm_Menu, Frm_Menu);
-  Application.CreateForm(TFrm_CadDesenv, Frm_CadDesenv);
-  Application.CreateForm(TFrm_CadDesenv, Frm_CadDesenv);
-  Application.CreateForm(TFrm_CadPlataforma, Frm_CadPlataforma);
-  Application.CreateForm(TFrm_CadTipoCat, Frm_CadTipoCat);
-  Application.CreateForm(TFrm_CadJogos, Frm_CadJogos);
   Application.Run;
 end.
