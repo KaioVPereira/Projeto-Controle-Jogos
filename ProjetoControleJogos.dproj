@@ -160,6 +160,18 @@
             <Form>Frm_CadJogos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Forms\ConsultaExistente\U_ConsultaExistente.pas">
+            <Form>Frm_ConsultaExistente</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\ConsultaExistente\ConsultaDesenvol\U_ConsultaDesnvol.pas">
+            <Form>Frm_ConsultaDesenvol</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\ConsultaExistente\ConsultaCat\U_ConsultaCat.pas">
+            <Form>Frm_ConsultaCategoria</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

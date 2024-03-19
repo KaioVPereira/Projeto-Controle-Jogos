@@ -1066,7 +1066,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     ExplicitTop = -8
   end
   object Label1: TLabel
-    Left = 289
+    Left = 282
     Top = 184
     Width = 126
     Height = 15
@@ -1078,6 +1078,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
+    ExplicitLeft = 289
   end
   object LB_Consulta: TLabel
     Left = 111
@@ -1094,6 +1095,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Font.Name = 'Segoe UI'
     Font.Style = [fsItalic]
     ParentFont = False
+    OnClick = LB_ConsultaClick
     OnMouseEnter = LB_ConsultaMouseEnter
     OnMouseLeave = LB_ConsultaMouseLeave
   end
@@ -1114,7 +1116,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Visible = False
   end
   object Button1: TButton
-    Left = 231
+    Left = 225
     Top = 272
     Width = 97
     Height = 25
@@ -1122,11 +1124,11 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Caption = 'VOLTAR'
     TabOrder = 0
     OnClick = Button1Click
-    ExplicitLeft = 226
+    ExplicitLeft = 220
     ExplicitTop = 252
   end
   object Button2: TButton
-    Left = 364
+    Left = 356
     Top = 272
     Width = 97
     Height = 25
@@ -1134,11 +1136,11 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Caption = 'GRAVAR'
     TabOrder = 1
     OnClick = Button2Click
-    ExplicitLeft = 356
+    ExplicitLeft = 348
     ExplicitTop = 252
   end
   object txt_NomeCat: TEdit
-    Left = 209
+    Left = 203
     Top = 216
     Width = 281
     Height = 23
@@ -1146,7 +1148,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Anchors = []
     TabOrder = 2
     OnChange = txt_NomeCatChange
-    ExplicitLeft = 202
+    ExplicitLeft = 196
     ExplicitTop = 200
   end
   object Qry_CadCat: TFDQuery

@@ -18,7 +18,10 @@ uses
   U_CadDesenvolvedora in 'Forms\CadDesenvolvedora\U_CadDesenvolvedora.pas' {Frm_CadDesenv},
   U_CadPlataforma in 'Forms\CadPlataforma\U_CadPlataforma.pas' {Frm_CadPlataforma},
   U_CadTipoCat in 'Forms\CadTipoCat\U_CadTipoCat.pas' {Frm_CadTipoCat},
-  U_CadJogos in 'Forms\CadJogos\U_CadJogos.pas' {Frm_CadJogos};
+  U_CadJogos in 'Forms\CadJogos\U_CadJogos.pas' {Frm_CadJogos},
+  U_ConsultaExistente in 'Forms\ConsultaExistente\U_ConsultaExistente.pas' {Frm_ConsultaExistente},
+  U_ConsultaDesnvol in 'Forms\ConsultaExistente\ConsultaDesenvol\U_ConsultaDesnvol.pas' {Frm_ConsultaDesenvol},
+  U_ConsultaCat in 'Forms\ConsultaExistente\ConsultaCat\U_ConsultaCat.pas' {Frm_ConsultaCategoria};
 
 {$R *.res}
 
@@ -28,5 +31,6 @@ begin
   Application.CreateForm(TFrm_Inicial, Frm_Inicial);
   Application.CreateForm(Tfrm_ConfigIni, frm_ConfigIni);
   Application.CreateForm(Tdm_Dados, dm_Dados);
+  Application.CreateForm(TFrm_ConsultaCategoria, Frm_ConsultaCategoria);
   Application.Run;
 end.

@@ -8,7 +8,7 @@ uses
   Vcl.StdCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, U_Biblioteca;
+  FireDAC.Comp.Client, U_Biblioteca, U_ConsultaExistente;
 
 type
   TFrm_CadDesenv = class(TForm)
@@ -26,6 +26,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure LB_ConsultaMouseEnter(Sender: TObject);
     procedure LB_ConsultaMouseLeave(Sender: TObject);
+    procedure LB_ConsultaClick(Sender: TObject);
   private
     { Private declarations }
     function ValidaDesenvol (Query : TFDQuery ; Texto:String): Boolean;
@@ -40,7 +41,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_Dados;
+uses U_Dados, U_ConsultaDesnvol;
 
 procedure TFrm_CadDesenv.Button1Click(Sender: TObject);
 begin
@@ -75,6 +76,11 @@ begin
     MsgAtencao('O nome da Desenvolvedora não pode ser em branco')
   end;
 
+end;
+
+procedure TFrm_CadDesenv.LB_ConsultaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_ConsultaDesenvol, Frm_ConsultaDesenvol);
 end;
 
 procedure TFrm_CadDesenv.LB_ConsultaMouseEnter(Sender: TObject);

@@ -1414,7 +1414,7 @@ object Frm_CadJogos: TFrm_CadJogos
     Height = 25
     Cursor = crHandPoint
     Caption = 'VOLTAR'
-    TabOrder = 0
+    TabOrder = 7
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -1424,7 +1424,7 @@ object Frm_CadJogos: TFrm_CadJogos
     Height = 25
     Cursor = crHandPoint
     Caption = 'GRAVAR'
-    TabOrder = 6
+    TabOrder = 5
     OnClick = Button2Click
   end
   object txt_NomeJogo: TEdit
@@ -1433,7 +1433,7 @@ object Frm_CadJogos: TFrm_CadJogos
     Width = 378
     Height = 23
     Alignment = taCenter
-    TabOrder = 1
+    TabOrder = 0
     OnChange = txt_NomeJogoChange
   end
   object cb_Categoria: TDBLookupComboBox
@@ -1445,7 +1445,7 @@ object Frm_CadJogos: TFrm_CadJogos
     KeyField = 'CONTROLE_CAT'
     ListField = 'NOME_CATEGORIA'
     ListSource = DS_Categoria
-    TabOrder = 2
+    TabOrder = 1
     OnEnter = cb_CategoriaEnter
   end
   object cb_Desenvol: TDBLookupComboBox
@@ -1457,7 +1457,7 @@ object Frm_CadJogos: TFrm_CadJogos
     KeyField = 'CODIGO'
     ListField = 'NOME'
     ListSource = DS_Desenvolvedora
-    TabOrder = 3
+    TabOrder = 2
     OnEnter = cb_DesenvolEnter
   end
   object txt_NotaPopular: TEdit
@@ -1465,7 +1465,7 @@ object Frm_CadJogos: TFrm_CadJogos
     Top = 305
     Width = 57
     Height = 23
-    TabOrder = 5
+    TabOrder = 4
     OnExit = txt_NotaPopularExit
   end
   object txt_NotaCriticos: TEdit
@@ -1473,7 +1473,7 @@ object Frm_CadJogos: TFrm_CadJogos
     Top = 248
     Width = 57
     Height = 23
-    TabOrder = 4
+    TabOrder = 3
     OnExit = txt_NotaCriticosExit
   end
   object Button3: TButton
@@ -1482,7 +1482,7 @@ object Frm_CadJogos: TFrm_CadJogos
     Width = 75
     Height = 25
     Caption = 'Button3'
-    TabOrder = 7
+    TabOrder = 6
     Visible = False
     OnClick = Button3Click
   end

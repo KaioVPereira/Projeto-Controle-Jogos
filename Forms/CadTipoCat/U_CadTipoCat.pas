@@ -26,6 +26,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure txt_NomeCatChange(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure LB_ConsultaClick(Sender: TObject);
   private
     function ValidaCat (Query : TFDQuery ; Texto:String): Boolean;
     { Private declarations }
@@ -39,6 +40,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses U_ConsultaCat;
 
 procedure TFrm_CadTipoCat.Button1Click(Sender: TObject);
 begin
@@ -72,6 +75,11 @@ begin
   begin
     MsgAtencao('O nome da Categoria não pode ser em branco')
   end;
+end;
+
+procedure TFrm_CadTipoCat.LB_ConsultaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_ConsultaCategoria, Frm_ConsultaCategoria);
 end;
 
 procedure TFrm_CadTipoCat.LB_ConsultaMouseEnter(Sender: TObject);
