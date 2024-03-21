@@ -2114,7 +2114,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     ExplicitTop = -8
   end
   object Label1: TLabel
-    Left = 273
+    Left = 271
     Top = 184
     Width = 137
     Height = 15
@@ -2126,6 +2126,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
+    ExplicitLeft = 273
   end
   object LB_Consulta: TLabel
     Left = 111
@@ -2142,6 +2143,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Font.Name = 'Segoe UI'
     Font.Style = [fsItalic]
     ParentFont = False
+    OnClick = LB_ConsultaClick
     OnMouseEnter = LB_ConsultaMouseEnter
     OnMouseLeave = LB_ConsultaMouseLeave
   end
@@ -2162,7 +2164,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Visible = False
   end
   object Button1: TButton
-    Left = 231
+    Left = 230
     Top = 272
     Width = 97
     Height = 25
@@ -2170,11 +2172,11 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Caption = 'VOLTAR'
     TabOrder = 0
     OnClick = Button1Click
-    ExplicitLeft = 226
-    ExplicitTop = 252
+    ExplicitLeft = 228
+    ExplicitTop = 271
   end
   object Button2: TButton
-    Left = 364
+    Left = 361
     Top = 272
     Width = 97
     Height = 25
@@ -2182,11 +2184,11 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Caption = 'GRAVAR'
     TabOrder = 1
     OnClick = Button2Click
-    ExplicitLeft = 356
-    ExplicitTop = 252
+    ExplicitLeft = 359
+    ExplicitTop = 271
   end
   object txt_NomePlat: TEdit
-    Left = 209
+    Left = 207
     Top = 216
     Width = 281
     Height = 23
@@ -2194,8 +2196,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Anchors = []
     TabOrder = 2
     OnChange = txt_NomePlatChange
-    ExplicitLeft = 202
-    ExplicitTop = 200
+    ExplicitLeft = 205
   end
   object Qry_CadPlat: TFDQuery
     Connection = dm_Dados.fd_Connection

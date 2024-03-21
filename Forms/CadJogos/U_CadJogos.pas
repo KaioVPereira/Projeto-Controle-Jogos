@@ -59,6 +59,7 @@ type
     procedure Btn_CadDesenvolClick(Sender: TObject);
     procedure cb_CategoriaEnter(Sender: TObject);
     procedure cb_DesenvolEnter(Sender: TObject);
+    procedure LB_ConsultaClick(Sender: TObject);
   private
      function ValidaJogo (Query : TFDQuery ; Texto:String): Boolean;
      procedure ExtrairInformacoesDaPagina(const PaginaHTML: string);
@@ -73,6 +74,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses U_ConsultaJogos;
 
 procedure TFrm_CadJogos.Btn_BuscaMetacritcClick(Sender: TObject);
 VAR URL,jogo :string;
@@ -234,6 +237,11 @@ begin
 end;
 
 
+
+procedure TFrm_CadJogos.LB_ConsultaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_ConsultaJogos, Frm_ConsultaJogos);
+end;
 
 procedure TFrm_CadJogos.LB_ConsultaJogosClick(Sender: TObject);
 var

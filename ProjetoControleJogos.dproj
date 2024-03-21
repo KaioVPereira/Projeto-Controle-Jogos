@@ -172,6 +172,14 @@
             <Form>Frm_ConsultaCategoria</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Forms\ConsultaExistente\ConsultaPlat\U_ConsultaPlat.pas">
+            <Form>Frm_ConsultaPlat</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Forms\ConsultaExistente\ConsultaJogos\U_ConsultaJogos.pas">
+            <Form>Frm_ConsultaJogos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

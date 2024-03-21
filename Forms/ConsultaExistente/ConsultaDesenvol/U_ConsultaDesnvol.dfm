@@ -1,18 +1,10 @@
 inherited Frm_ConsultaDesenvol: TFrm_ConsultaDesenvol
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
   Caption = 'Consulta Desenvolvedora'
-  ClientHeight = 309
-  ClientWidth = 360
-  Position = poScreenCenter
   TextHeight = 15
   inherited Panel1: TPanel
-    Width = 360
-    ExplicitWidth = 346
+    ExplicitWidth = 356
     inherited Btn_Buscar: TButton
-      Left = 224
       OnClick = Btn_BuscarClick
-      ExplicitLeft = 224
     end
     inherited txt_Busca: TEdit
       Left = 24
@@ -20,12 +12,8 @@ inherited Frm_ConsultaDesenvol: TFrm_ConsultaDesenvol
     end
   end
   inherited Panel2: TPanel
-    Width = 360
-    Height = 260
-    ExplicitLeft = 0
-    ExplicitTop = 49
-    ExplicitWidth = 346
-    ExplicitHeight = 227
+    ExplicitWidth = 356
+    ExplicitHeight = 259
     inherited DBGrid1: TDBGrid
       DataSource = Ds_Consulta
     end

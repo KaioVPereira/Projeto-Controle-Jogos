@@ -1,0 +1,4 @@
+inherited Frm_ConsultaExistente1: TFrm_ConsultaExistente1
+  Caption = 'Frm_ConsultaExistente1'
+  TextHeight = 15
+end

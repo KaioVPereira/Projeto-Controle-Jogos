@@ -1093,6 +1093,7 @@ object Frm_CadJogos: TFrm_CadJogos
     Font.Name = 'Segoe UI'
     Font.Style = [fsItalic]
     ParentFont = False
+    OnClick = LB_ConsultaClick
     OnMouseEnter = LB_ConsultaMouseEnter
     OnMouseLeave = LB_ConsultaMouseLeave
   end

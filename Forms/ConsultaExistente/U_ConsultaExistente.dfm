@@ -1,6 +1,8 @@
 object Frm_ConsultaExistente: TFrm_ConsultaExistente
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Consulta Cadastro Existente'
   ClientHeight = 309
   ClientWidth = 360
@@ -10,7 +12,7 @@ object Frm_ConsultaExistente: TFrm_ConsultaExistente
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poDesigned
+  Position = poScreenCenter
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -19,9 +21,9 @@ object Frm_ConsultaExistente: TFrm_ConsultaExistente
     Height = 49
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 479
+    ExplicitWidth = 346
     object Btn_Buscar: TButton
-      Left = 8
+      Left = 264
       Top = 13
       Width = 75
       Height = 25
@@ -29,9 +31,9 @@ object Frm_ConsultaExistente: TFrm_ConsultaExistente
       TabOrder = 0
     end
     object txt_Busca: TEdit
-      Left = 120
+      Left = 9
       Top = 14
-      Width = 169
+      Width = 224
       Height = 23
       TabOrder = 1
     end
@@ -44,16 +46,15 @@ object Frm_ConsultaExistente: TFrm_ConsultaExistente
     Align = alClient
     Caption = 'Pn_AllClient'
     TabOrder = 1
-    ExplicitLeft = 120
-    ExplicitTop = 232
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitWidth = 346
+    ExplicitHeight = 227
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1
       Width = 358
       Height = 258
       Align = alClient
+      DataSource = Ds_Consulta
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -63,6 +64,7 @@ object Frm_ConsultaExistente: TFrm_ConsultaExistente
     end
   end
   object Qry_Busca: TFDQuery
+    Connection = dm_Dados.fd_Connection
     Left = 320
     Top = 9
   end

@@ -1,0 +1,11 @@
+inherited Frm_ConsultaJogos: TFrm_ConsultaJogos
+  Caption = 'Consulta Jogos'
+  TextHeight = 15
+  inherited Panel1: TPanel
+    ExplicitWidth = 356
+  end
+  inherited Panel2: TPanel
+    ExplicitWidth = 356
+    ExplicitHeight = 259
+  end
+end

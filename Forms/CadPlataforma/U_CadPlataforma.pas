@@ -27,6 +27,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure txt_NomePlatChange(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure LB_ConsultaClick(Sender: TObject);
   private
     function ValidaPlat (Query : TFDQuery ; Texto:String): Boolean;
     { Private declarations }
@@ -40,6 +41,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses U_ConsultaPlat;
 
 procedure TFrm_CadPlataforma.Button1Click(Sender: TObject);
 begin
@@ -76,6 +79,11 @@ begin
 
 end;
 
+
+procedure TFrm_CadPlataforma.LB_ConsultaClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_ConsultaPlat, Frm_ConsultaPlat);
+end;
 
 procedure TFrm_CadPlataforma.LB_ConsultaMouseEnter(Sender: TObject);
 begin
