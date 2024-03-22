@@ -131,7 +131,7 @@ begin
     end
     else
     begin
-      MsgAtencao('Jogo já cadastrada anteriormente')
+      MsgAtencao('Jogo já cadastrado anteriormente')
     end;
   end
   else

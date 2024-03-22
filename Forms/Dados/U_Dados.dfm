@@ -1,8 +1,7 @@
 object dm_Dados: Tdm_Dados
   OnCreate = DataModuleCreate
-  Height = 1234
-  Width = 1836
-  PixelsPerInch = 192
+  Height = 617
+  Width = 918
   object fd_Connection: TFDConnection
     Params.Strings = (
       'Protocol=TCPIP'
@@ -13,7 +12,7 @@ object dm_Dados: Tdm_Dados
       'Database=C:\SCL\Projeto-Controle-Jogos\BANCO.IB'
       'DriverID=FB')
     Connected = True
-    Left = 80
-    Top = 16
+    Left = 40
+    Top = 8
   end
 end

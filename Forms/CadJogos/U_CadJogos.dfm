@@ -1488,7 +1488,6 @@ object Frm_CadJogos: TFrm_CadJogos
     OnClick = Button3Click
   end
   object Qry_Desenvol: TFDQuery
-    Active = True
     Connection = dm_Dados.fd_Connection
     SQL.Strings = (
       'SELECT CONTROLE_DESEN AS CODIGO,'

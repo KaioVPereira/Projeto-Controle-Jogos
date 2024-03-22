@@ -4,8 +4,8 @@ object Frm_Inicial: TFrm_Inicial
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Inicial'
-  ClientHeight = 360
-  ClientWidth = 587
+  ClientHeight = 359
+  ClientWidth = 583
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,14 +15,14 @@ object Frm_Inicial: TFrm_Inicial
   Position = poScreenCenter
   OnShow = FormShow
   DesignSize = (
-    587
-    360)
+    583
+    359)
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 587
-    Height = 360
+    Width = 583
+    Height = 359
     Align = alClient
     Picture.Data = {
       0A544A504547496D616765026C0200FFD8FFE100BC45786966000049492A0008
@@ -4993,7 +4993,7 @@ object Frm_Inicial: TFrm_Inicial
     ExplicitHeight = 105
   end
   object Img_BtStart: TImage
-    Left = 192
+    Left = 190
     Top = 76
     Width = 217
     Height = 81
@@ -5379,12 +5379,13 @@ object Frm_Inicial: TFrm_Inicial
       527B01A9E15FF91934EFFAEEBFCEBDBA8A2BF42E1BFE0CFD7F4678D8EF8A2251
       4515F6AB63CB3FFFD9}
     Stretch = True
+    OnClick = Img_BtStartClick
     ExplicitLeft = 208
     ExplicitTop = 64
   end
   object Img_BtMenu: TImage
-    Left = 192
-    Top = 202
+    Left = 190
+    Top = 201
     Width = 217
     Height = 89
     Cursor = crHandPoint

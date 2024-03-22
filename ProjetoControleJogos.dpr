@@ -23,7 +23,8 @@ uses
   U_ConsultaDesnvol in 'Forms\ConsultaExistente\ConsultaDesenvol\U_ConsultaDesnvol.pas' {Frm_ConsultaDesenvol},
   U_ConsultaCat in 'Forms\ConsultaExistente\ConsultaCat\U_ConsultaCat.pas' {Frm_ConsultaCategoria},
   U_ConsultaPlat in 'Forms\ConsultaExistente\ConsultaPlat\U_ConsultaPlat.pas' {Frm_ConsultaPlat},
-  U_ConsultaJogos in 'Forms\ConsultaExistente\ConsultaJogos\U_ConsultaJogos.pas' {Frm_ConsultaJogos};
+  U_ConsultaJogos in 'Forms\ConsultaExistente\ConsultaJogos\U_ConsultaJogos.pas' {Frm_ConsultaJogos},
+  U_Start in 'Forms\Start\U_Start.pas' {Frm_Start};
 
 {$R *.res}
 
@@ -36,5 +37,6 @@ begin
   Application.CreateForm(TFrm_ConsultaCategoria, Frm_ConsultaCategoria);
   Application.CreateForm(TFrm_ConsultaPlat, Frm_ConsultaPlat);
   Application.CreateForm(TFrm_ConsultaJogos, Frm_ConsultaJogos);
+  Application.CreateForm(TFrm_Start, Frm_Start);
   Application.Run;
 end.
