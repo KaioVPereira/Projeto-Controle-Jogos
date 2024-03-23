@@ -2,7 +2,8 @@ unit U_Biblioteca;
 
 interface
   uses IniFiles, System.SysUtils, Vcl.Forms, FireDAC.Comp.Client,
-  System.Classes, Winapi.Windows, Data.DB, Vcl.ExtCtrls, Vcl.Imaging.jpeg,RegularExpressions; //frxClass;
+  System.Classes, Winapi.Windows, Data.DB, Vcl.ExtCtrls, Vcl.Imaging.jpeg,RegularExpressions
+  , U_CadJogoZerado; //frxClass;
 
   const OffsetMemoryStream : Int64 = 0;
 
@@ -21,6 +22,7 @@ interface
   Function  VerificaCaracteresEspeciais(Texto : String): Boolean;
   function  ValidaEmail        (const email: string): Boolean;
   Var GravaUsuario : String;
+  var   GlobalFrm_JogoZerado: TFrm_JogosZerados;
 
   var MemoryStream : TMemoryStream;
      Jpg : TJpegImage;
@@ -30,6 +32,8 @@ interface
 implementation
 
 uses  Vcl.DBCtrls;
+
+
 
   //Procedure que gera o arquivo ini
   procedure ArqIni(pLocal, pSessao, pSubsessao: String; pValor:String);

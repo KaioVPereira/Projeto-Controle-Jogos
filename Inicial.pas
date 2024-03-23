@@ -29,7 +29,7 @@ implementation
 {$R *.dfm}
 
 uses U_Biblioteca, U_ConfigIni, U_constantes, U_Dados, U_login, uCrpt, U_Menu,
-  U_Start;
+  U_Start, U_CadJogoZerado;
 
 procedure TFrm_Inicial.FormShow(Sender: TObject);
 begin

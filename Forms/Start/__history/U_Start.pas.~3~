@@ -1,0 +1,37 @@
+unit U_Start;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
+  Vcl.Imaging.jpeg, Vcl.Buttons;
+
+type
+  TFrm_Start = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Btn_CadZerados: TSpeedButton;
+    Btn_CadParaZerar: TSpeedButton;
+    procedure Btn_CadZeradosClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_Start: TFrm_Start;
+
+implementation
+
+{$R *.dfm}
+
+uses U_CadJogoZerado, U_Biblioteca;
+
+procedure TFrm_Start.Btn_CadZeradosClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_JogosZerados, Frm_JogosZerados);
+end;
+
+end.
