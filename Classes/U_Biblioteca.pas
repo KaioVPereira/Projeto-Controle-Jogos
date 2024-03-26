@@ -22,7 +22,8 @@ interface
   Function  VerificaCaracteresEspeciais(Texto : String): Boolean;
   function  ValidaEmail        (const email: string): Boolean;
   Var GravaUsuario : String;
-  var   GlobalFrm_JogoZerado: TFrm_JogosZerados;
+  var GravaCodigoUsuario : integer;
+  var GlobalFrm_JogoZerado: TFrm_JogosZerados;
 
   var MemoryStream : TMemoryStream;
      Jpg : TJpegImage;

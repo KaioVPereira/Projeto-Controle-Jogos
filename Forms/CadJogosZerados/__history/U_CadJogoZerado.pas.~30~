@@ -1,0 +1,143 @@
+unit U_CadJogoZerado;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.DBCtrls, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TFrm_JogosZerados = class(TForm)
+    Image1: TImage;
+    txt_BuscarZerado: TEdit;
+    Btn_Buscar: TBitBtn;
+    Panel1: TPanel;
+    txt_Desenvol: TEdit;
+    txt_Categoria: TEdit;
+    CB_Plat: TDBLookupComboBox;
+    CB_Platina: TComboBox;
+    txt_nota: TEdit;
+    txt_horas: TEdit;
+    Memo1: TMemo;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Qry_BuscaPlat: TFDQuery;
+    DS_BuscaPlat: TDataSource;
+    Button1: TButton;
+    Button2: TButton;
+    Btn_CadPlat: TSpeedButton;
+    procedure Btn_BuscarClick(Sender: TObject);
+    procedure txt_notaExit(Sender: TObject);
+    procedure CB_PlatEnter(Sender: TObject);
+    procedure Btn_CadPlatClick(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    procedure Gravar;
+    { Private declarations }
+  public
+    procedure BuscaValorGrid (const nome : String);
+    var CodigoJogo, CodigoDesenvol,CodigoCat : Integer;
+        Platina : STRING ;
+    { Public declarations }
+  end;
+
+var
+  Frm_JogosZerados: TFrm_JogosZerados;
+
+implementation
+
+{$R *.dfm}
+
+uses U_Biblioteca, U_ConsultaJogoZerado, U_Dados, U_CadPlataforma;
+
+procedure TFrm_JogosZerados.Btn_BuscarClick(Sender: TObject);
+begin
+  Frm_ConsultaJogoZerar := TFrm_ConsultaJogoZerar.Create(Application);
+  Try
+    Frm_ConsultaJogoZerar.SetText(txt_BuscarZerado.Text);
+    Frm_ConsultaJogoZerar.BuscaJogozerar;
+    Frm_ConsultaJogoZerar.Showmodal;
+  Finally
+    Frm_ConsultaJogoZerar.Free;
+  End;
+
+  //Frm_ConsultaJogoZerar.Btn_BuscarClick (Sender : TObject);
+end;
+
+procedure TFrm_JogosZerados.Btn_CadPlatClick(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadPlataforma, Frm_CadPlataforma);
+end;
+
+procedure TFrm_JogosZerados.BuscaValorGrid(const nome: String);
+begin
+  Frm_JogosZerados.txt_BuscarZerado.Text := nome;
+end;
+
+procedure TFrm_JogosZerados.Button2Click(Sender: TObject);
+begin
+  showmessage ('teste');
+end;
+
+procedure TFrm_JogosZerados.CB_PlatEnter(Sender: TObject);
+begin
+  Qry_BuscaPlat.Close;
+  Qry_BuscaPlat.Open;
+end;
+
+procedure TFrm_JogosZerados.Gravar;
+begin
+  if CB_Platina.Text = 'Sim' then
+  begin
+    Platina := 'S'
+  end
+  else
+  begin
+    Platina := 'N'
+  end;
+end;
+
+procedure TFrm_JogosZerados.txt_notaExit(Sender: TObject);
+ var
+Text: string;
+Value: Double;
+
+begin
+  // Salva o texto atual do TDEdit
+  Text := txt_nota.Text;
+
+  // Remove qualquer caractere que não seja dígito ou vírgula
+  Text := StringReplace(Text, '.', ',', [rfReplaceAll, rfIgnoreCase]);
+  Text := StringReplace(Text, ' ', '', [rfReplaceAll, rfIgnoreCase]);
+
+  // Verifica se o texto é um número válido
+  if TryStrToFloat(Text, Value) then
+  begin
+    // Formata o número no formato desejado
+    Text := FormatFloat('0.00', Value);
+  end
+  else
+  begin
+    // Se não for um número válido, define o texto como vazio
+    Text := '';
+  end;
+
+  // Atualiza o texto do TDEdit
+  txt_nota.Text := Text;
+
+  // Define o cursor para o final do texto
+  txt_nota.SelStart := Length(Text);
+end;
+
+
+end.

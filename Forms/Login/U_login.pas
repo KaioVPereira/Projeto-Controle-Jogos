@@ -63,7 +63,8 @@ begin
   else
   if Login(txt_login.Text,txt_senha.Text) = true then
   begin
-     GravaUsuario := txt_login.Text;//Frm_login.Close;
+     GravaUsuario := txt_login.Text;
+     GravaCodigoUsuario := DMB_Login.fd_QueryLogin.FieldByName('CONTROLE_USUARIO').AsInteger;
      self.Close;
   end;
 

@@ -1,10 +1,25 @@
 inherited Frm_ConsultaJogoZerar: TFrm_ConsultaJogoZerar
   Caption = 'Consultar Jogos'
+  ClientHeight = 309
+  ClientWidth = 628
+  ExplicitHeight = 347
   TextHeight = 15
   inherited Panel1: TPanel
+    Width = 628
     ExplicitWidth = 624
+    object btn_Cadastrar: TButton
+      Left = 520
+      Top = 13
+      Width = 75
+      Height = 25
+      Caption = 'Cadastrar'
+      TabOrder = 2
+      OnClick = btn_CadastrarClick
+    end
   end
   inherited Panel2: TPanel
+    Width = 628
+    Height = 260
     ExplicitWidth = 624
     inherited DBGrid1: TDBGrid
       OnDblClick = DBGrid1DblClick

@@ -1066,7 +1066,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     ExplicitTop = -8
   end
   object Label1: TLabel
-    Left = 282
+    Left = 278
     Top = 184
     Width = 126
     Height = 15
@@ -1116,7 +1116,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Visible = False
   end
   object Button1: TButton
-    Left = 225
+    Left = 223
     Top = 272
     Width = 97
     Height = 25
@@ -1124,11 +1124,11 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Caption = 'VOLTAR'
     TabOrder = 0
     OnClick = Button1Click
-    ExplicitLeft = 220
-    ExplicitTop = 252
+    ExplicitLeft = 221
+    ExplicitTop = 271
   end
   object Button2: TButton
-    Left = 356
+    Left = 351
     Top = 272
     Width = 97
     Height = 25
@@ -1136,11 +1136,11 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Caption = 'GRAVAR'
     TabOrder = 1
     OnClick = Button2Click
-    ExplicitLeft = 348
-    ExplicitTop = 252
+    ExplicitLeft = 349
+    ExplicitTop = 271
   end
   object txt_NomeCat: TEdit
-    Left = 203
+    Left = 199
     Top = 216
     Width = 281
     Height = 23
@@ -1148,8 +1148,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
     Anchors = []
     TabOrder = 2
     OnChange = txt_NomeCatChange
-    ExplicitLeft = 196
-    ExplicitTop = 200
+    ExplicitLeft = 197
   end
   object Qry_CadCat: TFDQuery
     Connection = dm_Dados.fd_Connection
@@ -1163,7 +1162,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
         Name = 'CATEGORIA'
         DataType = ftString
         ParamType = ptInput
-        Size = 20
+        Size = 100
         Value = Null
       end>
   end
@@ -1180,7 +1179,7 @@ object Frm_CadTipoCat: TFrm_CadTipoCat
         Name = 'CATEGORIA'
         DataType = ftString
         ParamType = ptInput
-        Size = 20
+        Size = 100
         Value = Null
       end>
   end

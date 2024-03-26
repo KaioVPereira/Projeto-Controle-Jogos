@@ -1,5 +1,4 @@
 object DMB_CadUsuario: TDMB_CadUsuario
-  OldCreateOrder = True
   Height = 480
   Width = 640
   object Qry_ValidaUser: TFDQuery
@@ -25,7 +24,7 @@ object DMB_CadUsuario: TDMB_CadUsuario
       'SELECT 1 FROM USUARIO'
       'WHERE'
       'EMAIL = :EMAIL')
-    Left = 120
+    Left = 128
     Top = 16
     ParamData = <
       item
@@ -45,8 +44,8 @@ object DMB_CadUsuario: TDMB_CadUsuario
       
         '            VALUES  (:NICKNAME, :USUARIO, :SENHA, GEN_ID(GEN_USU' +
         'ARIO_ID,1), null,  null, :EMAIL , :DDD, :NUMERO)')
-    Left = 120
-    Top = 72
+    Left = 128
+    Top = 80
     ParamData = <
       item
         Name = 'NICKNAME'

@@ -1,0 +1,34 @@
+unit DMB_NewInicial;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TDBM_NewInicial = class(TDataModule)
+    Qry_Top10: TFDQuery;
+    DS_Top10: TDataSource;
+    Qry_Top10NOME_JOGO: TStringField;
+    Qry_Top10NOTA: TFloatField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DBM_NewInicial: TDBM_NewInicial;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses U_Biblioteca, U_Dados;
+
+{$R *.dfm}
+
+end.

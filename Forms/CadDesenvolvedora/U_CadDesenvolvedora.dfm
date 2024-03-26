@@ -1066,7 +1066,7 @@ object Frm_CadDesenv: TFrm_CadDesenv
     ExplicitTop = -8
   end
   object Label1: TLabel
-    Left = 265
+    Left = 259
     Top = 184
     Width = 168
     Height = 15
@@ -1116,7 +1116,7 @@ object Frm_CadDesenv: TFrm_CadDesenv
     OnMouseLeave = LB_ConsultaMouseLeave
   end
   object txt_NomeDesenvol: TEdit
-    Left = 209
+    Left = 203
     Top = 216
     Width = 281
     Height = 23
@@ -1124,11 +1124,10 @@ object Frm_CadDesenv: TFrm_CadDesenv
     Anchors = []
     TabOrder = 0
     OnChange = txt_NomeDesenvolChange
-    ExplicitLeft = 202
-    ExplicitTop = 200
+    ExplicitLeft = 201
   end
   object Button1: TButton
-    Left = 231
+    Left = 228
     Top = 272
     Width = 97
     Height = 25
@@ -1137,10 +1136,10 @@ object Frm_CadDesenv: TFrm_CadDesenv
     TabOrder = 1
     OnClick = Button1Click
     ExplicitLeft = 226
-    ExplicitTop = 252
+    ExplicitTop = 271
   end
   object Button2: TButton
-    Left = 364
+    Left = 355
     Top = 272
     Width = 97
     Height = 25
@@ -1148,8 +1147,8 @@ object Frm_CadDesenv: TFrm_CadDesenv
     Caption = 'GRAVAR'
     TabOrder = 2
     OnClick = Button2Click
-    ExplicitLeft = 356
-    ExplicitTop = 252
+    ExplicitLeft = 353
+    ExplicitTop = 271
   end
   object Qry_CadDesenvol: TFDQuery
     Connection = dm_Dados.fd_Connection
@@ -1167,7 +1166,7 @@ object Frm_CadDesenv: TFrm_CadDesenv
         Name = 'DESENVOLVEDORA'
         DataType = ftString
         ParamType = ptInput
-        Size = 30
+        Size = 100
         Value = Null
       end>
   end
@@ -1184,8 +1183,15 @@ object Frm_CadDesenv: TFrm_CadDesenv
         Name = 'DESENVOLVEDORA'
         DataType = ftString
         ParamType = ptInput
-        Size = 30
+        Size = 100
         Value = Null
       end>
+    object Qry_ValidaDesenvolCONSTANT: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'CONSTANT'
+      Origin = 'CONSTANT'
+      ProviderFlags = []
+      ReadOnly = True
+    end
   end
 end

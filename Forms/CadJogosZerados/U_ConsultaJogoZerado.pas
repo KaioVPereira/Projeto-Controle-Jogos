@@ -19,8 +19,10 @@ type
     Qry_BuscaCODIGO: TIntegerField;
     Qry_BuscaCODIGO_CATEOGORIA: TIntegerField;
     Qry_BuscaCODIGO_DESENVOLEDORA: TIntegerField;
+    btn_Cadastrar: TButton;
     procedure DBGrid1DblClick(Sender: TObject);
     procedure Btn_BuscarClick(Sender: TObject);
+    procedure btn_CadastrarClick(Sender: TObject);
   private
 
 
@@ -39,10 +41,24 @@ implementation
 
 {$R *.dfm}
 
+uses U_CadJogos;
+
 procedure TFrm_ConsultaJogoZerar.Btn_BuscarClick(Sender: TObject);
 begin
   //inherited;
   BuscaJogoZerar;
+end;
+
+procedure TFrm_ConsultaJogoZerar.btn_CadastrarClick(Sender: TObject);
+begin
+  inherited;
+  Frm_CadJogos := TFrm_CadJogos.Create(Application);
+  Try
+    Frm_CadJogos.txt_NomeJogo.Text := txt_Busca.Text;
+    Frm_CadJogos.Showmodal;
+  Finally
+    Frm_CadJogos.Free;
+  End;
 end;
 
 procedure TFrm_ConsultaJogoZerar.BuscaJogoZerar;

@@ -2114,7 +2114,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     ExplicitTop = -8
   end
   object Label1: TLabel
-    Left = 271
+    Left = 267
     Top = 184
     Width = 137
     Height = 15
@@ -2164,7 +2164,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Visible = False
   end
   object Button1: TButton
-    Left = 230
+    Left = 228
     Top = 272
     Width = 97
     Height = 25
@@ -2172,11 +2172,11 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Caption = 'VOLTAR'
     TabOrder = 0
     OnClick = Button1Click
-    ExplicitLeft = 228
+    ExplicitLeft = 226
     ExplicitTop = 271
   end
   object Button2: TButton
-    Left = 361
+    Left = 355
     Top = 272
     Width = 97
     Height = 25
@@ -2184,11 +2184,11 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Caption = 'GRAVAR'
     TabOrder = 1
     OnClick = Button2Click
-    ExplicitLeft = 359
+    ExplicitLeft = 353
     ExplicitTop = 271
   end
   object txt_NomePlat: TEdit
-    Left = 207
+    Left = 203
     Top = 216
     Width = 281
     Height = 23
@@ -2196,7 +2196,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
     Anchors = []
     TabOrder = 2
     OnChange = txt_NomePlatChange
-    ExplicitLeft = 205
+    ExplicitLeft = 201
   end
   object Qry_CadPlat: TFDQuery
     Connection = dm_Dados.fd_Connection
@@ -2210,7 +2210,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
         Name = 'PLATAFORMA'
         DataType = ftString
         ParamType = ptInput
-        Size = 30
+        Size = 100
         Value = Null
       end>
   end
@@ -2227,7 +2227,7 @@ object Frm_CadPlataforma: TFrm_CadPlataforma
         Name = 'PLATAFORMA'
         DataType = ftString
         ParamType = ptInput
-        Size = 30
+        Size = 100
         Value = Null
       end>
   end

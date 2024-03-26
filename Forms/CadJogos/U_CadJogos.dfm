@@ -1590,7 +1590,7 @@ object Frm_CadJogos: TFrm_CadJogos
         Name = 'NOMEJOGO'
         DataType = ftString
         ParamType = ptInput
-        Size = 50
+        Size = 100
         Value = Null
       end>
   end

@@ -192,6 +192,15 @@
             <Form>Frm_ConsultaJogoZerar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="U_NovaInicial.pas">
+            <Form>Frm_NewInicial</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="DMB_NovaInicial.pas">
+            <Form>DBM_NewInicial</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

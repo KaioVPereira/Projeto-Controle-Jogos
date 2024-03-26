@@ -5,7 +5,7 @@ object Frm_JogosZerados: TFrm_JogosZerados
   BorderStyle = bsSingle
   Caption = 'Jogos Zerados'
   ClientHeight = 647
-  ClientWidth = 848
+  ClientWidth = 903
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,11 +13,12 @@ object Frm_JogosZerados: TFrm_JogosZerados
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 848
+    Width = 903
     Height = 647
     Align = alClient
     Picture.Data = {
@@ -1060,11 +1061,11 @@ object Frm_JogosZerados: TFrm_JogosZerados
       E141A925A3E4EE70763E1CB872391CB8722F18C673E1CFF28308A4E13854915D
       9B4884AB77EA7FFFD9}
     Stretch = True
-    ExplicitWidth = 969
-    ExplicitHeight = 864
+    ExplicitTop = 8
+    ExplicitWidth = 848
   end
   object Label2: TLabel
-    Left = 379
+    Left = 398
     Top = 28
     Width = 94
     Height = 15
@@ -1077,16 +1078,16 @@ object Frm_JogosZerados: TFrm_JogosZerados
     ParentFont = False
   end
   object txt_BuscarZerado: TEdit
-    Left = 308
+    Left = 303
     Top = 49
-    Width = 265
+    Width = 298
     Height = 23
     Alignment = taCenter
     TabOrder = 0
   end
   object Btn_Buscar: TBitBtn
-    Left = 600
-    Top = 48
+    Left = 607
+    Top = 47
     Width = 89
     Height = 25
     Cursor = crHandPoint
@@ -1095,15 +1096,15 @@ object Frm_JogosZerados: TFrm_JogosZerados
     OnClick = Btn_BuscarClick
   end
   object Panel1: TPanel
-    Left = 208
-    Top = 88
-    Width = 473
-    Height = 545
+    Left = 207
+    Top = 78
+    Width = 489
+    Height = 490
     Caption = 'Panel1'
     TabOrder = 2
     object Label1: TLabel
-      Left = 279
-      Top = 299
+      Left = 182
+      Top = 259
       Width = 102
       Height = 15
       Caption = 'HORAS JOGADAS:'
@@ -1115,8 +1116,8 @@ object Frm_JogosZerados: TFrm_JogosZerados
       ParentFont = False
     end
     object Label3: TLabel
-      Left = 199
-      Top = 91
+      Left = 198
+      Top = 69
       Width = 68
       Height = 15
       Caption = 'CATEGORIA:'
@@ -1128,8 +1129,8 @@ object Frm_JogosZerados: TFrm_JogosZerados
       ParentFont = False
     end
     object Label4: TLabel
-      Left = 199
-      Top = 163
+      Left = 198
+      Top = 131
       Width = 79
       Height = 15
       Caption = 'PLATAFORMA:'
@@ -1141,8 +1142,8 @@ object Frm_JogosZerados: TFrm_JogosZerados
       ParentFont = False
     end
     object Label5: TLabel
-      Left = 171
-      Top = 233
+      Left = 172
+      Top = 193
       Width = 117
       Height = 15
       Caption = 'FEZ 100% DO JOGO ?'
@@ -1154,8 +1155,8 @@ object Frm_JogosZerados: TFrm_JogosZerados
       ParentFont = False
     end
     object Label6: TLabel
-      Left = 136
-      Top = 299
+      Left = 120
+      Top = 259
       Width = 35
       Height = 15
       Caption = 'NOTA:'
@@ -1167,8 +1168,8 @@ object Frm_JogosZerados: TFrm_JogosZerados
       ParentFont = False
     end
     object Label7: TLabel
-      Left = 183
-      Top = 19
+      Left = 191
+      Top = 11
       Width = 110
       Height = 15
       Caption = 'DESENVOLVEDORA:'
@@ -1181,7 +1182,7 @@ object Frm_JogosZerados: TFrm_JogosZerados
     end
     object Label8: TLabel
       Left = 191
-      Top = 363
+      Top = 323
       Width = 85
       Height = 15
       Caption = 'OBSERVA'#199#213'ES:'
@@ -1192,10 +1193,95 @@ object Frm_JogosZerados: TFrm_JogosZerados
       Font.Style = [fsBold]
       ParentFont = False
     end
+    object Btn_CadPlat: TSpeedButton
+      Left = 60
+      Top = 152
+      Width = 23
+      Height = 22
+      Cursor = crHandPoint
+      Glyph.Data = {
+        C6070000424DC607000000000000360000002800000016000000160000000100
+        20000000000090070000C30E0000C30E00000000000000000000FFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEEF8F5FFA6D8C8FF5BB697FF229B
+        70FF058D5BFF058B58FF22986AFF5BB492FFA6D8C7FFEEF8F5FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFF7FBFAFF7BC6ADFF10966AFF009C68FF00A471FF00AD83FF00B79CFF00BE
+        ADFF00BAA6FF00AC86FF009B67FF109361FF7BC5ACFFF7FBFAFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDBEFE8FF31A57FFF009C
+        69FF00A56FFF00B178FF00B97FFF00BB84FF00BD8AFF00C69FFF00D6C8FF00E3
+        EBFF00D7D9FF00B598FF009B65FF31A47BFFDBEFE9FFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFDCEFE9FF1A9B70FF009E6AFF00AF76FF00B97EFF00B6
+        7CFF00B57BFF00B479FF00B478FF00B273FF00B170FF00BA88FF00D3C4FF00E4
+        EBFF00CBBEFF00A06FFF1A996CFFDCEFE9FFFFFFFFFFFFFFFFFFFFFFFFFFF7FC
+        FAFF2DA17AFF009E6AFF00B279FF00B87DFF00B57BFF00B57BFF00B57BFF00B3
+        78FF00B276FF00B276FF00B478FF00B376FF00B274FF00C19AFF00D9D2FF00CE
+        BFFF00A06EFF2DA078FFF7FCFAFFFFFFFFFFFFFFFFFF7CC4ACFF009D69FF00AF
+        76FF00B87DFF00B57BFF00B57BFF00B57BFF00B174FF71D5B5FFBDECDCFFBDEC
+        DCFF6ED5B4FF00B174FF00B57AFF00B274FF00B986FF00D0BAFF00C1A6FF009C
+        67FF7CC4ACFFFFFFFFFFF0F8F6FF0B9165FF00A56FFF00B97EFF00B57BFF00B5
+        7BFF00B57BFF00B57BFF00B071FF9FE2CCFFFFFFFFFFFFFFFFFF9BE1CBFF00B0
+        70FF00B57BFF00B57BFF00B376FF00B67DFF00C8A5FF00AC81FF0B9061FFF0F8
+        F6FFA7D7C7FF009C68FF00B178FF00B67CFF00B57BFF00B57BFF00B57BFF00B5
+        7BFF00B072FF96E0C8FFFFFFFFFFFFFFFFFF93DFC7FF00B071FF00B57BFF00B5
+        7BFF00B57BFF00B479FF00B77DFF00B581FF009C68FFA7D7C7FF59B395FF00A3
+        6EFF00B77CFF00B57BFF00B57BFF00B275FF00B072FF00B072FF00AB69FF8FDE
+        C4FFFFFFFFFFFFFFFFFF8CDDC3FF00AB68FF00B072FF00B072FF00B275FF00B5
+        7BFF00B57AFF00B77BFF00A36EFF59B395FF1F986FFF00A979FF00BA82FF00B4
+        79FF00B378FF76D7B8FFA1E3CEFF9EE3CDFF9CE1C9FFD3F2E8FFFFFFFFFFFFFF
+        FFFFD2F2E8FF9CE1C9FF9EE3CDFFA1E3CEFF76D7B8FF00B378FF00B57AFF00B8
+        7DFF00A56FFF1F9870FF028B5CFF00AD83FF00C296FF00B478FF00B275FFC6EE
+        E1FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFC6EEE1FF00B276FF00B57AFF00B87DFF00A670FF028C
+        5EFF028B5BFF00AF87FF00CAABFF00BC8EFF00B070FFC6EEE0FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFC6EEE1FF00B276FF00B57AFF00B87DFF00A670FF028C5EFF1F976CFF00AE
+        86FF00CEB5FF00C9ADFF00BC8EFF76D5B3FFA1E2CBFF9EE3CCFF9CE1C9FFD3F2
+        E8FFFFFFFFFFFFFFFFFFD2F2E8FF9CE0C8FF9EE2CCFFA1E3CDFF76D6B7FF00B3
+        77FF00B57AFF00B87DFF00A56FFF1F9870FF59B292FF00A87BFF00D1BDFF00CD
+        B8FF00CDB8FF00C099FF00B379FF00AE6EFF00A863FF8FDDC2FFFFFFFFFFFFFF
+        FFFF8CDCC2FF00AA65FF00B072FF00B174FF00B377FF00B67DFF00B57AFF00B7
+        7BFF00A36EFF59B395FFA7D7C6FF009C68FF00C9B5FF00D4C7FF00D0C0FF00D1
+        C1FF00CEBAFF00C7A9FF00BD94FF96E5D4FFFFFFFFFFFFFFFFFF93E6D6FF00C0
+        9CFF00C5A5FF00C6A5FF00C5A4FF00C4A2FF00C4A0FF00BA8EFF009C67FFA7D7
+        C7FFF0F8F6FF0B8E5EFF00B18FFF00DCD8FF00D4CBFF00D4C8FF00D3C7FF00D3
+        C8FF00D0C3FF9FEEE9FFFFFFFFFFFFFFFFFF9BECE5FF00CAB6FF00CDB8FF00CC
+        B5FF00CBB3FF00CAB1FF00D0B8FF00AE86FF0B9061FFF0F8F6FFFFFFFFFF7CC4
+        ABFF009B65FF00CABBFF00DFE1FF00D7D3FF00D7D2FF00D6CFFF00D3CBFF70E7
+        E2FFBCF4F1FFBCF4F1FF6EE6DEFF00CFC0FF00D1C1FF00D0BFFF00CFBDFF00D4
+        C3FF00C1A6FF009C67FF7CC4ACFFFFFFFFFFFFFFFFFFF7FCFAFF2D9F76FF00A1
+        70FF00D5D2FF00E3EBFF00DBDCFF00DBDAFF00DAD9FF00D8D5FF00D6D2FF00D6
+        D0FF00D6CFFF00D6CFFF00D5CCFF00D4CAFF00D9D2FF00CDBCFF00A070FF2DA0
+        77FFF7FCFAFFFFFFFFFFFFFFFFFFFFFFFFFFDCEFE9FF1A996AFF00A171FF00D0
+        CBFF00E8F7FF00E3ECFF00DEE4FF00DDE1FF00DCDFFF00DCDDFF00DBDBFF00DA
+        DAFF00DDDDFF00E0E2FF00CABBFF00A171FF1A996BFFDCEFE9FFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFFFFFFFFFDBEFE9FF31A37AFF009B65FF00B8A0FF00DA
+        DFFF00E8F8FF00E9FAFF00E8F7FF00E7F5FF00E7F3FF00E4EDFF00D5D3FF00B6
+        9AFF009B66FF31A47BFFDBEFE9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFF7FBFAFF7BC5ACFF109260FF009C69FF00AF8CFF00BB
+        A8FF00C1B5FF00C1B4FF00BAA6FF00AE8BFF009D6AFF109361FF7BC5ACFFF7FB
+        FAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFFEEF8F5FFA6D8C6FF5BB391FF229869FF058B57FF058B
+        58FF22986AFF5BB391FFA6D8C6FFEEF8F5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        FFFFFFFFFFFFFFFFFFFF}
+      OnClick = Btn_CadPlatClick
+    end
+    object Label9: TLabel
+      Left = 318
+      Top = 259
+      Width = 30
+      Height = 15
+      Caption = 'DATA'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clHighlightText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object txt_Desenvol: TEdit
-      Left = 112
-      Top = 48
-      Width = 265
+      Left = 96
+      Top = 32
+      Width = 297
       Height = 23
       Alignment = taCenter
       Enabled = False
@@ -1203,57 +1289,189 @@ object Frm_JogosZerados: TFrm_JogosZerados
       TabOrder = 0
     end
     object txt_Categoria: TEdit
-      Left = 112
-      Top = 112
-      Width = 265
+      Left = 96
+      Top = 90
+      Width = 297
       Height = 23
       Alignment = taCenter
       Enabled = False
       ReadOnly = True
+      TabOrder = 7
+    end
+    object CB_Plat: TDBLookupComboBox
+      Left = 96
+      Top = 152
+      Width = 297
+      Height = 23
+      KeyField = 'CONTROLE_PLAT'
+      ListField = 'NOME_PLAT'
+      ListSource = DS_BuscaPlat
       TabOrder = 1
+      OnEnter = CB_PlatEnter
     end
-    object DBLookupComboBox1: TDBLookupComboBox
-      Left = 112
-      Top = 184
-      Width = 265
+    object CB_Platina: TComboBox
+      Left = 96
+      Top = 214
+      Width = 297
       Height = 23
+      ImeName = 'Portuguese (Brazilian ABNT)'
       TabOrder = 2
-    end
-    object ComboBox1: TComboBox
-      Left = 112
-      Top = 254
-      Width = 265
-      Height = 23
-      TabOrder = 3
       Text = 'N'#227'o'
       Items.Strings = (
         'N'#227'o'
         'Sim')
     end
     object txt_nota: TEdit
-      Left = 112
-      Top = 320
+      Left = 96
+      Top = 280
       Width = 89
       Height = 23
       Alignment = taCenter
-      TabOrder = 4
+      TabOrder = 3
+      OnExit = txt_notaExit
     end
     object txt_horas: TEdit
-      Left = 288
-      Top = 320
+      Left = 191
+      Top = 280
       Width = 89
       Height = 23
       Alignment = taCenter
-      TabOrder = 5
+      NumbersOnly = True
+      TabOrder = 4
     end
-    object Memo1: TMemo
-      Left = 112
-      Top = 384
-      Width = 265
+    object MM_OBS: TMemo
+      Left = 96
+      Top = 344
+      Width = 297
       Height = 121
       Lines.Strings = (
         '')
       TabOrder = 6
     end
+    object DT_Date: TDateTimePicker
+      Left = 286
+      Top = 280
+      Width = 105
+      Height = 23
+      Date = 45375.000000000000000000
+      Time = 45375.000000000000000000
+      TabOrder = 5
+    end
+  end
+  object Button1: TButton
+    Left = 320
+    Top = 592
+    Width = 105
+    Height = 25
+    Cursor = crHandPoint
+    Caption = 'CANCELAR'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 456
+    Top = 592
+    Width = 112
+    Height = 25
+    Cursor = crHandPoint
+    Caption = 'SALVAR'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object Qry_BuscaPlat: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    SQL.Strings = (
+      'SELECT * FROM PLATAFORMA')
+    Left = 80
+    Top = 160
+  end
+  object DS_BuscaPlat: TDataSource
+    DataSet = Qry_BuscaPlat
+    Left = 80
+    Top = 224
+  end
+  object Qry_InsereJZ: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    SQL.Strings = (
+      'INSERT INTO JOGOS_ZERADOS'
+      
+        '           (CONTROLE_ZERADO,COD_JOGO, COD_PLATAFORMA,COD_CATEGOR' +
+        'IA,COD_DESENVOLVEDORA, HORAS,NOTA,COD_USUARIO,PLATINADO,OBS, DAT' +
+        'A_ZERADO)'
+      
+        '           VALUES(GEN_ID(GEN_JOGOS_ZERADOS_ID,1), :COD_JOGO, :CO' +
+        'D_PLATAFORMA, :COD_CATEGORIA, :COD_DESENVOLVEDORA, :HORAS, :NOTA' +
+        ', :COD_USUARIO, :PLATINADO, :OBS, :DATA)')
+    Left = 72
+    Top = 328
+    ParamData = <
+      item
+        Name = 'COD_JOGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'COD_PLATAFORMA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'COD_CATEGORIA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'COD_DESENVOLVEDORA'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'HORAS'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'NOTA'
+        DataType = ftFloat
+        Precision = 16
+        ParamType = ptInput
+      end
+      item
+        Name = 'COD_USUARIO'
+        DataType = ftInteger
+        ParamType = ptInput
+      end
+      item
+        Name = 'PLATINADO'
+        DataType = ftFixedChar
+        ParamType = ptInput
+        Size = 2
+      end
+      item
+        Name = 'OBS'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 200
+      end
+      item
+        Name = 'DATA'
+        ParamType = ptInput
+      end>
+  end
+  object qry_QtdLinhas: TFDQuery
+    Connection = dm_Dados.fd_Connection
+    SQL.Strings = (
+      'SELECT COUNT (1) FROM JOGOS_ZERADOS'
+      'WHERE COD_USUARIO = :COD_USUARIO')
+    Left = 72
+    Top = 432
+    ParamData = <
+      item
+        Name = 'COD_USUARIO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
   end
 end

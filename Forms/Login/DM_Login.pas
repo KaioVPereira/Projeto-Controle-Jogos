@@ -11,6 +11,9 @@ uses
 type
   TDMB_Login = class(TDataModule)
     fd_QueryLogin: TFDQuery;
+    fd_QueryLoginCONTROLE_USUARIO: TIntegerField;
+    fd_QueryLoginUSUARIO: TStringField;
+    fd_QueryLoginSENHA: TStringField;
   private
     { Private declarations }
   public

@@ -5,16 +5,18 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
-  Vcl.Buttons;
+  Vcl.Buttons, Vcl.StdCtrls;
 
 type
   TFrm_Inicial = class(TForm)
     Image1: TImage;
     Img_BtStart: TImage;
     Img_BtMenu: TImage;
+    BitBtn1: TBitBtn;
     procedure FormShow(Sender: TObject);
     procedure Img_BtMenuClick(Sender: TObject);
     procedure Img_BtStartClick(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,7 +31,12 @@ implementation
 {$R *.dfm}
 
 uses U_Biblioteca, U_ConfigIni, U_constantes, U_Dados, U_login, uCrpt, U_Menu,
-  U_Start, U_CadJogoZerado;
+  U_Start, U_CadJogoZerado, U_NovaInicial;
+
+procedure TFrm_Inicial.BitBtn1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_NewInicial, Frm_NewInicial)
+end;
 
 procedure TFrm_Inicial.FormShow(Sender: TObject);
 begin

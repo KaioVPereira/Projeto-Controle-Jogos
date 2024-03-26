@@ -21,6 +21,7 @@ type
     Qry_ValidaDesenvol: TFDQuery;
     LB_ValidaDesenvol: TLabel;
     LB_Consulta: TLabel;
+    Qry_ValidaDesenvolCONSTANT: TIntegerField;
     procedure Button2Click(Sender: TObject);
     procedure txt_NomeDesenvolChange(Sender: TObject);
     procedure Button1Click(Sender: TObject);
