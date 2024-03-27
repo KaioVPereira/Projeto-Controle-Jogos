@@ -28,7 +28,8 @@ uses
   U_CadJogoZerado in 'Forms\CadJogosZerados\U_CadJogoZerado.pas' {Frm_JogosZerados},
   U_ConsultaJogoZerado in 'Forms\CadJogosZerados\U_ConsultaJogoZerado.pas' {Frm_ConsultaJogoZerar},
   U_NovaInicial in 'U_NovaInicial.pas' {Frm_NewInicial},
-  DMB_NovaInicial in 'DMB_NovaInicial.pas' {DBM_NewInicial: TDataModule};
+  DMB_NovaInicial in 'DMB_NovaInicial.pas' {DBM_NewInicial: TDataModule},
+  U_MeusJogos in 'Forms\MeusJogos\U_MeusJogos.pas' {Frm_MeusJogos};
 
 {$R *.res}
 
@@ -40,6 +41,5 @@ begin
   Application.CreateForm(Tdm_Dados, dm_Dados);
   Application.CreateForm(TDMB_CadUsuario, DMB_CadUsuario);
   Application.CreateForm(TFrm_NewInicial, Frm_NewInicial);
-  Application.CreateForm(TDBM_NewInicial, DBM_NewInicial);
   Application.Run;
 end.

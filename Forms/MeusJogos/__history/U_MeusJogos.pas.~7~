@@ -1,0 +1,80 @@
+unit U_MeusJogos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TFrm_MeusJogos = class(TForm)
+    Panel1: TPanel;
+    DBGrid1: TDBGrid;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Qry_BuscaMeusJogos: TFDQuery;
+    DS_BuscaMeusJogos: TDataSource;
+    ComboBox1: TComboBox;
+    Edit1: TEdit;
+    procedure FormShow(Sender: TObject);
+  private
+    procedure BuscaJogo;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_MeusJogos: TFrm_MeusJogos;
+
+implementation
+
+{$R *.dfm}
+
+uses U_Biblioteca, U_Dados;
+
+{ TFrm_MeusJogos }
+
+procedure TFrm_MeusJogos.BuscaJogo;
+begin
+  Qry_BuscaMeusJogos.Close;
+  Qry_BuscaMeusJogos.SQL.Clear;
+  Qry_BuscaMeusJogos.SQL.Add('SELECT B.nome_jogo,C.nome_desenvol,D.nome_categoria, E.NOME_PLAT,');
+  Qry_BuscaMeusJogos.SQL.Add('A.nota AS SUA_NOTA, B.nota_metacritc_criticos,');
+  Qry_BuscaMeusJogos.SQL.Add('B.nota_metacritc_usuarios, A.data_zerado');
+  Qry_BuscaMeusJogos.SQL.Add('FROM JOGOS_ZERADOS A INNER JOIN JOGOS B ON');
+  Qry_BuscaMeusJogos.SQL.Add('A.cod_jogo = B.controle_jogo');
+  Qry_BuscaMeusJogos.SQL.Add('inner JOIN desenvolvedora C ON');
+  Qry_BuscaMeusJogos.SQL.Add('B.cod_desenvolvedora = C.controle_desen');
+  Qry_BuscaMeusJogos.SQL.Add('INNER join CATEGORIA_TIPO D ON');
+  Qry_BuscaMeusJogos.SQL.Add('B.cod_categoria = D.controle_cat');
+  Qry_BuscaMeusJogos.SQL.Add('INNER JOIN PLATAFORMA E ON');
+  Qry_BuscaMeusJogos.SQL.Add('A.cod_plataforma = E.controle_plat');
+  Qry_BuscaMeusJogos.SQL.Add('where A.cod_usuario = :USUARIO');
+  Qry_BuscaMeusJogos.SQL.Add('ORDER BY A.data_zerado DESC');
+
+  Qry_BuscaMeusJogos.ParamByName('USUARIO').Value := GravaCodigoUsuario;
+
+  Qry_BuscaMeusJogos.Open();
+
+  DBGrid1.Columns.Items[0].Width := 200;
+  DBGrid1.Columns.Items[1].Width := 150;
+  DBGrid1.Columns.Items[2].Width := 150;
+  DBGrid1.Columns.Items[3].Width := 80;
+  DBGrid1.Columns.Items[4].Width := 80;
+  DBGrid1.Columns.Items[5].Width := 80;
+  DBGrid1.Columns.Items[6].Width := 80;
+
+end;
+
+procedure TFrm_MeusJogos.FormShow(Sender: TObject);
+begin
+  BuscaJogo;
+end;
+
+end.

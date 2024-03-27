@@ -58,6 +58,16 @@ object Frm_NewInicial: TFrm_NewInicial
       Font.Style = [fsBold]
       ParentFont = False
     end
+    object ATUALIZAR: TButton
+      Left = 1192
+      Top = 15
+      Width = 75
+      Height = 25
+      Cursor = crHandPoint
+      Caption = 'ATUALIZAR'
+      TabOrder = 0
+      OnClick = ATUALIZARClick
+    end
   end
   object Pn_Fundo: TPanel
     Left = 0
@@ -109,6 +119,7 @@ object Frm_NewInicial: TFrm_NewInicial
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+        OnDrawColumnCell = DBGrid1DrawColumnCell
       end
     end
   end
@@ -145,6 +156,10 @@ object Frm_NewInicial: TFrm_NewInicial
     end
     object Consultas1: TMenuItem
       Caption = 'Consultas'
+      object JogosJogados2: TMenuItem
+        Caption = 'Jogos que Joguei'
+        OnClick = JogosJogados2Click
+      end
     end
   end
   object Qry_Top10: TFDQuery
