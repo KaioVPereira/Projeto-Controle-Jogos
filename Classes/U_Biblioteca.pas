@@ -18,6 +18,7 @@ interface
   function  MsgPerguntar      (pMsg: String; pFocoBtnSim : Boolean = true): Boolean;
   procedure MsgErro           (pMsg: String);
   procedure EnableEdit        (Form : TForm ; Valor : Boolean);
+  function  CriarFrm_JogoZerado: TFrm_JogosZerados;
   Function  ValidaCPF         (CPF : String): Boolean;
   Function  VerificaCaracteresEspeciais(Texto : String): Boolean;
   function  ValidaEmail        (const email: string): Boolean;
@@ -239,5 +240,12 @@ regex: TRegEx;
 begin
   regex := TRegEx.Create('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$');
   Result := regex.IsMatch(email);
+end;
+
+function CriarFrm_JogoZerado: TFrm_JogosZerados;
+begin
+  if not Assigned(GlobalFrm_JogoZerado) then
+    GlobalFrm_JogoZerado := TFrm_JogosZerados.Create(Application);
+  Result := GlobalFrm_JogoZerado;
 end;
 end.

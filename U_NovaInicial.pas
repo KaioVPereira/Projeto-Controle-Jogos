@@ -8,11 +8,13 @@ uses
   Data.DB, Vcl.Grids, Vcl.DBGrids, DMB_NovaInicial, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, U_MeusJogos;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, U_MeusJogos, U_CadDesenvolvedora,
+  U_CadJogoZerado, U_CadPlataforma, U_CadTipoCat, FireDAC.UI.Intf,
+  FireDAC.Stan.Def, FireDAC.Phys, U_login, VclTee.TeeGDIPlus, VCLTee.TeEngine,
+  VCLTee.TeeProcs, VCLTee.Chart, VCLTee.DBChart, VCLTee.Series, Vcl.Imaging.jpeg;
 
 type
   TFrm_NewInicial = class(TForm)
-    Panel1: TPanel;
     MainMenu1: TMainMenu;
     Cadastro: TMenuItem;
     N1: TMenuItem;
@@ -25,7 +27,6 @@ type
     Desistiudejogar1: TMenuItem;
     Consultas1: TMenuItem;
     Panel2: TPanel;
-    Label1: TLabel;
     Pn_Fundo: TPanel;
     Panel3: TPanel;
     Panel4: TPanel;
@@ -34,16 +35,31 @@ type
     Qry_Top10NOME_JOGO: TStringField;
     Qry_Top10NOTA: TFloatField;
     DS_Top10: TDataSource;
-    ATUALIZAR: TButton;
     JogosJogados2: TMenuItem;
+    Pn_Notas: TPanel;
+    lb_MaiorQue8: TLabel;
+    lb_MaiorQue5: TLabel;
+    lb_MenorQue5: TLabel;
+    Qry_ContaNotas: TFDQuery;
+    Panel6: TPanel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label1: TLabel;
+    Image1: TImage;
     procedure N1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ATUALIZARClick(Sender: TObject);
     procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);
     procedure JogosJogados2Click(Sender: TObject);
+    procedure Plataforma1Click(Sender: TObject);
+    procedure Desenvolvedora1Click(Sender: TObject);
+    procedure Categoria1Click(Sender: TObject);
+    procedure JogosJogados1Click(Sender: TObject);
   private
     procedure TopTen;
+    procedure ContaNotas;
     { Private declarations }
   public
     { Public declarations }
@@ -61,6 +77,28 @@ uses U_CadJogos, U_Biblioteca;
 procedure TFrm_NewInicial.ATUALIZARClick(Sender: TObject);
 begin
   TopTen;
+  ContaNotas;
+end;
+
+procedure TFrm_NewInicial.Categoria1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadTipoCat, Frm_CadTipoCat);
+end;
+
+procedure TFrm_NewInicial.ContaNotas;
+begin
+  qry_ContaNotas.ParamByName('USUARIO').Value := GravaCodigoUsuario;
+  qry_ContaNotas.Close;
+  qry_ContaNotas.Open();
+  lb_MaiorQue8.Caption := qry_ContaNotas.FieldByName('MAIORIGUAL8').AsString;
+  lb_MaiorQue5.Caption := qry_ContaNotas.FieldByName('MAIORQUE5').AsString;
+  lb_MenorQue5.Caption := qry_ContaNotas.FieldByName('MENORQUE5').AsString;
+  qry_ContaNotas.Close;
+
+  lb_MaiorQue8.Font.Color := clGreen;
+  lb_MaiorQue5.Font.Color := clOlive;
+  lb_MenorQue5.font.Color := RGB(205,92,92);
+
 end;
 
 procedure TFrm_NewInicial.DBGrid1DrawColumnCell(Sender: TObject;
@@ -77,21 +115,36 @@ begin
       Nota := Column.Field.AsFloat;
 
 
-      if Nota >= 8 then
+     if (Nota >10 ) then
+        DBGrid1.Canvas.Brush.Color := RGB(65,105,225)
+      else if (Nota >= 8)  and (Nota <=10 )  then
         DBGrid1.Canvas.Brush.Color := clGreen
       else if (Nota >= 5 ) and (nota < 8 )  then
-        DBGrid1.Canvas.Brush.Color := clYellow
+        DBGrid1.Canvas.Brush.Color := RGB(240,230,140)
       else
-        DBGrid1.Canvas.Brush.Color := clRed;
+        DBGrid1.Canvas.Brush.Color := RGB(205,92,92) ;
 
       DBGrid1.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, Column.Field.AsString);
     end;
   end;
 end;
 
+procedure TFrm_NewInicial.Desenvolvedora1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadDesenv, Frm_CadDesenv);
+end;
+
 procedure TFrm_NewInicial.FormShow(Sender: TObject);
 begin
+  AbreFormShowModal(Tfrm_Login, Frm_Login);
   TopTen;
+  ContaNotas;
+end;
+
+procedure TFrm_NewInicial.JogosJogados1Click(Sender: TObject);
+begin
+  CriarFrm_JogoZerado;
+  GlobalFrm_JogoZerado.ShowModal;
 end;
 
 procedure TFrm_NewInicial.JogosJogados2Click(Sender: TObject);
@@ -102,6 +155,11 @@ end;
 procedure TFrm_NewInicial.N1Click(Sender: TObject);
 begin
   AbreFormShowModal(TFrm_CadJogos, Frm_CadJogos)
+end;
+
+procedure TFrm_NewInicial.Plataforma1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadPlataforma, Frm_CadPlataforma);
 end;
 
 procedure TFrm_NewInicial.TopTen;
@@ -117,8 +175,8 @@ begin
   DBGrid1.Columns.Items[0].Color := clMoneyGreen;
   DBGrid1.Columns.Items[0].Title.Font.Style := [TFontStyle.fsBold];
   DBGrid1.Columns.Items[1].Title.Font.Style := [TFontStyle.fsBold];
-  DBGrid1.Columns.Items[1].Title.Font.Color := clPurple;
-  DBGrid1.Columns.Items[0].Title.Font.Color := clPurple;
+  DBGrid1.Columns.Items[1].Title.Font.Color := clWindowText;
+  DBGrid1.Columns.Items[0].Title.Font.Color := clWindowText;
 end;
 
 end.

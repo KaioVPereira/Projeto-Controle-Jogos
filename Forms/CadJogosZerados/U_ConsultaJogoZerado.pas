@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ExtCtrls, U_CadJogoZerado,
-  U_Biblioteca;
+  U_Biblioteca, Vcl.Imaging.jpeg;
 
 type
   TFrm_ConsultaJogoZerar = class(TFrm_ConsultaJogos)
@@ -23,6 +23,7 @@ type
     procedure DBGrid1DblClick(Sender: TObject);
     procedure Btn_BuscarClick(Sender: TObject);
     procedure btn_CadastrarClick(Sender: TObject);
+    procedure txt_BuscaChange(Sender: TObject);
   private
 
 
@@ -124,6 +125,12 @@ end;}
 procedure TFrm_ConsultaJogoZerar.SetText(const Atext: String);
 begin
   txt_Busca.Text := Atext;
+end;
+
+procedure TFrm_ConsultaJogoZerar.txt_BuscaChange(Sender: TObject);
+begin
+  inherited;
+  BuscaJogoZerar;
 end;
 
 end.

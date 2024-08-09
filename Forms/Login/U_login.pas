@@ -46,7 +46,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_Dados, uCrpt, DM_Login, U_CadUsuario;
+uses U_Dados, uCrpt, DM_Login, U_CadUsuario, U_NovaInicial;
 
 procedure TFrm_login.btn_cancelarClick(Sender: TObject);
 begin

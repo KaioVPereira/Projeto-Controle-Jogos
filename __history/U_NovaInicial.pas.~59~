@@ -1,0 +1,182 @@
+unit U_NovaInicial;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Menus, Vcl.StdCtrls,
+  Data.DB, Vcl.Grids, Vcl.DBGrids, DMB_NovaInicial, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, U_MeusJogos, U_CadDesenvolvedora,
+  U_CadJogoZerado, U_CadPlataforma, U_CadTipoCat, FireDAC.UI.Intf,
+  FireDAC.Stan.Def, FireDAC.Phys, U_login;
+
+type
+  TFrm_NewInicial = class(TForm)
+    Panel1: TPanel;
+    MainMenu1: TMainMenu;
+    Cadastro: TMenuItem;
+    N1: TMenuItem;
+    Plataforma1: TMenuItem;
+    Desenvolvedora1: TMenuItem;
+    Categoria1: TMenuItem;
+    Categoria2: TMenuItem;
+    JogosJogados1: TMenuItem;
+    Jogosparajogar1: TMenuItem;
+    Desistiudejogar1: TMenuItem;
+    Consultas1: TMenuItem;
+    Panel2: TPanel;
+    Pn_Fundo: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    DBGrid1: TDBGrid;
+    Qry_Top10: TFDQuery;
+    Qry_Top10NOME_JOGO: TStringField;
+    Qry_Top10NOTA: TFloatField;
+    DS_Top10: TDataSource;
+    ATUALIZAR: TButton;
+    JogosJogados2: TMenuItem;
+    Pn_Notas: TPanel;
+    lb_MaiorQue8: TLabel;
+    lb_MaiorQue5: TLabel;
+    lb_MenorQue5: TLabel;
+    Qry_ContaNotas: TFDQuery;
+    Panel6: TPanel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label1: TLabel;
+    procedure N1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ATUALIZARClick(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure JogosJogados2Click(Sender: TObject);
+    procedure Plataforma1Click(Sender: TObject);
+    procedure Desenvolvedora1Click(Sender: TObject);
+    procedure Categoria1Click(Sender: TObject);
+    procedure JogosJogados1Click(Sender: TObject);
+  private
+    procedure TopTen;
+    procedure ContaNotas;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_NewInicial: TFrm_NewInicial;
+
+implementation
+
+{$R *.dfm}
+
+uses U_CadJogos, U_Biblioteca;
+
+procedure TFrm_NewInicial.ATUALIZARClick(Sender: TObject);
+begin
+  TopTen;
+  ContaNotas;
+end;
+
+procedure TFrm_NewInicial.Categoria1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadTipoCat, Frm_CadTipoCat);
+end;
+
+procedure TFrm_NewInicial.ContaNotas;
+begin
+  qry_ContaNotas.ParamByName('USUARIO').Value := GravaCodigoUsuario;
+  qry_ContaNotas.Close;
+  qry_ContaNotas.Open();
+  lb_MaiorQue8.Caption := qry_ContaNotas.FieldByName('MAIORIGUAL8').AsString;
+  lb_MaiorQue5.Caption := qry_ContaNotas.FieldByName('MAIORQUE5').AsString;
+  lb_MenorQue5.Caption := qry_ContaNotas.FieldByName('MENORQUE5').AsString;
+  qry_ContaNotas.Close;
+
+  lb_MaiorQue8.Font.Color := clGreen;
+  lb_MaiorQue5.Font.Color := clOlive;
+  lb_MenorQue5.font.Color := RGB(205,92,92);
+
+end;
+
+procedure TFrm_NewInicial.DBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    var
+  Nota: Double;
+begin
+   if Column.Index = 1 then
+  begin
+
+    if not (Column.Field.IsNull) then
+    begin
+
+      Nota := Column.Field.AsFloat;
+
+
+     if (Nota >10 ) then
+        DBGrid1.Canvas.Brush.Color := RGB(65,105,225)
+      else if (Nota >= 8)  and (Nota <=10 )  then
+        DBGrid1.Canvas.Brush.Color := clGreen
+      else if (Nota >= 5 ) and (nota < 8 )  then
+        DBGrid1.Canvas.Brush.Color := RGB(240,230,140)
+      else
+        DBGrid1.Canvas.Brush.Color := RGB(205,92,92) ;
+
+      DBGrid1.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, Column.Field.AsString);
+    end;
+  end;
+end;
+
+procedure TFrm_NewInicial.Desenvolvedora1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadDesenv, Frm_CadDesenv);
+end;
+
+procedure TFrm_NewInicial.FormShow(Sender: TObject);
+begin
+  AbreFormShowModal(Tfrm_Login, Frm_Login);
+  TopTen;
+  ContaNotas;
+end;
+
+procedure TFrm_NewInicial.JogosJogados1Click(Sender: TObject);
+begin
+  CriarFrm_JogoZerado;
+  GlobalFrm_JogoZerado.ShowModal;
+end;
+
+procedure TFrm_NewInicial.JogosJogados2Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_MeusJogos, Frm_MeusJogos);
+end;
+
+procedure TFrm_NewInicial.N1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadJogos, Frm_CadJogos)
+end;
+
+procedure TFrm_NewInicial.Plataforma1Click(Sender: TObject);
+begin
+  AbreFormShowModal(TFrm_CadPlataforma, Frm_CadPlataforma);
+end;
+
+procedure TFrm_NewInicial.TopTen;
+var Nota : Double;
+begin
+  Qry_Top10.ParamByName('USUARIO').Value := GravaCodigoUsuario;
+  Qry_Top10.Close;
+  Qry_Top10.Open();
+  DBGrid1.Columns.Items[0].Width := 200;
+  DBGrid1.Columns.Items[1].Font.Style := [TFontStyle.fsBold];
+  DBGrid1.Columns.Items[0].Font.Style := [TFontStyle.fsBold];
+  DBGrid1.Columns.Items[1].Color := clMoneyGreen;
+  DBGrid1.Columns.Items[0].Color := clMoneyGreen;
+  DBGrid1.Columns.Items[0].Title.Font.Style := [TFontStyle.fsBold];
+  DBGrid1.Columns.Items[1].Title.Font.Style := [TFontStyle.fsBold];
+  DBGrid1.Columns.Items[1].Title.Font.Color := clWindowText;
+  DBGrid1.Columns.Items[0].Title.Font.Color := clWindowText;
+end;
+
+end.

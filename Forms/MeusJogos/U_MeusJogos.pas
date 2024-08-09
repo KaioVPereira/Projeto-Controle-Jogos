@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Grids,
-  Vcl.DBGrids, Vcl.ExtCtrls;
+  Vcl.DBGrids, Vcl.ExtCtrls, U_CadJogoZerado, Vcl.Imaging.jpeg;
 
 type
   TFrm_MeusJogos = class(TForm)
@@ -29,8 +29,14 @@ type
     Qry_BuscaMeusJogosNOTA_METACRITC_CRITICOS: TFloatField;
     Qry_BuscaMeusJogosNOTA_METACRITC_USUARIOS: TFloatField;
     Qry_BuscaMeusJogosDATA_ZERADO: TDateField;
+    Panel2: TPanel;
+    Image1: TImage;
+    Image2: TImage;
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
   private
     procedure BuscaJogo;
     { Private declarations }
@@ -95,8 +101,8 @@ begin
   DBGrid1.Columns.Items[2].Width := 150;
   DBGrid1.Columns.Items[3].Width := 80;
   DBGrid1.Columns.Items[4].Width := 80;
-  DBGrid1.Columns.Items[5].Width := 120;
-  DBGrid1.Columns.Items[6].Width := 120;
+  DBGrid1.Columns.Items[5].Width := 90;
+  DBGrid1.Columns.Items[6].Width := 90;
   DBGrid1.Columns.Items[7].Width := 120;
 
   DBGrid1.Columns.Items[0].Font.Style := [TFontStyle.fsBold];
@@ -108,11 +114,52 @@ begin
   DBGrid1.Columns.Items[6].Font.Style := [TFontStyle.fsBold];
   DBGrid1.Columns.Items[7].Font.Style := [TFontStyle.fsBold];
 
+
+  DBGrid1.Columns.Items[1].Color := clMoneyGreen;
+  DBGrid1.Columns.Items[0].Color := clMoneyGreen;
+  DBGrid1.Columns.Items[2].Color := clMoneyGreen;
+  DBGrid1.Columns.Items[3].Color := clMoneyGreen;
 end;
 
 procedure TFrm_MeusJogos.Button1Click(Sender: TObject);
 begin
   BuscaJogo;
+end;
+
+procedure TFrm_MeusJogos.Button3Click(Sender: TObject);
+begin
+  CriarFrm_JogoZerado;
+  GlobalFrm_JogoZerado.txt_BuscarZerado.Text := Edit1.Text;
+  GlobalFrm_JogoZerado.ShowModal;
+end;
+
+procedure TFrm_MeusJogos.DBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+var
+  Nota: Double;
+begin
+   if (Column.Index = 4) or (Column.Index = 5) or (Column.Index = 6)  then
+  begin
+
+    if not (Column.Field.IsNull) then
+    begin
+
+      Nota := Column.Field.AsFloat;
+
+      if (Nota >10 ) then
+        DBGrid1.Canvas.Brush.Color := RGB(65,105,225)
+      else if (Nota >= 8)  and (Nota <=10 )  then
+        DBGrid1.Canvas.Brush.Color := clGreen
+      else if (Nota >= 5 ) and (nota < 8 )  then
+        DBGrid1.Canvas.Brush.Color := RGB(240,230,140)
+      else
+        DBGrid1.Canvas.Brush.Color := RGB(205,92,92) ;
+
+      DBGrid1.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, Column.Field.AsString);
+    end;
+  end;
+end;
 end;
 
 procedure TFrm_MeusJogos.FormShow(Sender: TObject);

@@ -3,7 +3,7 @@ object Frm_CadJogos: TFrm_CadJogos
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Frm_CadJogos'
+  Caption = 'Cadastrar Jogo'
   ClientHeight = 506
   ClientWidth = 794
   Color = clBtnFace

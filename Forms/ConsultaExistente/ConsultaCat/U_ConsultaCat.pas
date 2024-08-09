@@ -8,11 +8,12 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Imaging.jpeg;
 
 type
   TFrm_ConsultaCategoria = class(TFrm_ConsultaExistente)
     Qry_BuscaNOME: TStringField;
+    Image1: TImage;
     procedure Btn_BuscarClick(Sender: TObject);
   private
     procedure BuscaNome;

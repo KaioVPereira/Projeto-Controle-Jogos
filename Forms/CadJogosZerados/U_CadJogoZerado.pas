@@ -146,7 +146,7 @@ begin
         qtd_linhas := qry_QtdLinhas.FieldByName('COUNT').AsInteger;
         qry_QtdLinhas.Close;
 
-          Qry_InsereJZ.ParamByName('COD_JOGO').Value := CodigoJogo;
+        Qry_InsereJZ.ParamByName('COD_JOGO').Value := CodigoJogo;
         Qry_InsereJZ.ParamByName('COD_PLATAFORMA').Value := CB_Plat.KeyValue;
         Qry_InsereJZ.ParamByName('COD_CATEGORIA').Value := CodigoCat;
         Qry_InsereJZ.ParamByName('COD_DESENVOLVEDORA').Value := CodigoDesenvol;

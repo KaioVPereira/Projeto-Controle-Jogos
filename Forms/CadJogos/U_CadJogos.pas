@@ -84,13 +84,13 @@ begin
 
   jogo := StringReplace(Jogo, ' ', '%20', [rfReplaceAll, rfIgnoreCase]);
   // Defina a URL que você deseja abrir
-  if txt_NomeJogo.Text <> '' then
+  if  txt_NomeJogo.Text <> '' then
   begin
     URL := 'http://www.MetaCritic.com/search/' + jogo;
   end
   else
   begin
-    URL := 'http://www.MetaCritic.com'
+    URL := 'http://www.MetaCritic.com/games'
   end;
 
 

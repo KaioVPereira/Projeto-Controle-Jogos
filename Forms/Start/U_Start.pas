@@ -17,7 +17,6 @@ type
   private
     { Private declarations }
   public
-    function CriarFrm_JogoZerado: TFrm_JogosZerados;
     { Public declarations }
   end;
 
@@ -36,11 +35,6 @@ begin
   GlobalFrm_JogoZerado.ShowModal;
 end;
 
-function TFrm_Start.CriarFrm_JogoZerado: TFrm_JogosZerados;
-begin
-  if not Assigned(GlobalFrm_JogoZerado) then
-    GlobalFrm_JogoZerado := TFrm_JogosZerados.Create(Application);
-  Result := GlobalFrm_JogoZerado;
-end;
+
 
 end.

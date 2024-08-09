@@ -36,10 +36,9 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFrm_Inicial, Frm_Inicial);
+  Application.CreateForm(TFrm_NewInicial, Frm_NewInicial);
   Application.CreateForm(Tfrm_ConfigIni, frm_ConfigIni);
   Application.CreateForm(Tdm_Dados, dm_Dados);
   Application.CreateForm(TDMB_CadUsuario, DMB_CadUsuario);
-  Application.CreateForm(TFrm_NewInicial, Frm_NewInicial);
   Application.Run;
 end.

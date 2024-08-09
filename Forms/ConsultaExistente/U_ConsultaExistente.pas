@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Vcl.StdCtrls, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, U_Biblioteca, U_Dados;
+  FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, U_Biblioteca, U_Dados,
+  Vcl.Imaging.jpeg;
 
 type
   TFrm_ConsultaExistente = class(TForm)
@@ -19,6 +20,7 @@ type
     Btn_Buscar: TButton;
     txt_Busca: TEdit;
     Ds_Consulta: TDataSource;
+    Image2: TImage;
   private
     { Private declarations }
   public
